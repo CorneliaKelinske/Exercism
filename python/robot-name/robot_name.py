@@ -8,7 +8,7 @@ class Robot:
         self.name = self.pick_name()
     
     def reset(self):
-        self.name = self.reset_name()
+        self.name = self.pick_name()
         return self.name
            
     def __repr__(self):
@@ -26,19 +26,7 @@ class Robot:
         Robot.names.append(name)
         return name
     
-    def reset_name(self):
-        first = self._pick_letter()
-        second = self._pick_letter()
-        third = self._pick_number()
-        fourth = self._pick_number()
-        fifth = self._pick_number()
-        name = first + second + third + fourth + fifth
-        if name in Robot.names:
-            name = self.pick_name()
-        Robot.names.append(name)
-        return name
-
-    
+        
     def _pick_letter(self):
         letters = letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J",
          "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
