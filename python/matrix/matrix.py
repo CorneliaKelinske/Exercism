@@ -6,11 +6,20 @@ class Matrix(object):
         self.numbers = [[int(num) for num in item] for item in re_splitted]
 
     def row(self, index):
-        return self.numbers[index-1]
+        t = tuple(self.numbers[index-1])
+        return list(t)
        
     def column(self, index):
         return [item[index-1] for item in self.numbers]
 
+m = Matrix("1 2 3\n4 5 6\n7 8 9")
+
+print(m.numbers)
+print(m.row(2))
+print(m.column(2))
+test_row = m.row(2).append(4)
+print(m.row(2))
+print(m.numbers)
 
 
 
