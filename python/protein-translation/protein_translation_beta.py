@@ -18,11 +18,12 @@ def proteins(strang):
         match = key.search(strang)
         if match:
             if key == e:
-                return all_proteins
+                break
             else:
                 all_proteins.append(code[key])
                 strang = match.group("rest")
                 proteins(strang)
+    return all_proteins
 
-print (proteins("UGGUAA"))              
+print (proteins("UGGUGUUAUUAAUGGUUU"))              
 
