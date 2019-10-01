@@ -17,21 +17,25 @@ def proteins(strand):
    
     for key in code:
         match = key.search(strand)
-       
-        if match:
+
+        if match and key == e:
+            print("BREAK")
+            break
+        elif match:
             print(match.group())
-            if key == e:
-                break
+            
+            
+            print("CONTINUE")
+            all_proteins.append(code[key])
+            print(f"all proteins: {all_proteins}")
+            rest = match.group("rest")
+            if rest:
+                strand = rest
+                print(strand)
+                proteins(strand)
             else:
-                all_proteins.append(code[key])
-                #print(f"all proteins: {all_proteins}")
-                rest = match.group("rest")
-                if rest:
-                    strand = rest
-                    print(strand)
-                    proteins(strand)
-                else:
-                    break
+                print("NO_REST")
+                break
     return all_proteins
 
 print (proteins("AUGUUUUUCUAA"))
