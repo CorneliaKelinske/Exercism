@@ -18,10 +18,11 @@ def proteins(strand):
     for key in code:
         match = key.search(strand)
 
+        
         if match and key == e:
             print("BREAK")
             break
-        elif match:
+        elif match and key != e:
             print(match.group())
             
             
