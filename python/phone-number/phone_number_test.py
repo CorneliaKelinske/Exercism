@@ -12,7 +12,7 @@ class PhoneNumberTest(unittest.TestCase):
 
     def test_cleans_number_with_dots(self):
         number = Phone("223.456.7890").number
-        self.assertEqual(number, "2234567890")
+        self.assertEqual(number, '2234567890')
 
     def test_cleans_number_with_multiple_spaces(self):
         number = Phone("223 456   7890   ").number
@@ -91,7 +91,7 @@ class PhoneNumberTest(unittest.TestCase):
         number = Phone("12234567890")
         self.assertEqual(number.pretty(), "(223) 456-7890")
 
-    # Utility functions
+    #Utility functions
     def setUp(self):
         try:
             self.assertRaisesRegex
