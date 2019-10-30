@@ -7,6 +7,7 @@ class Phone(object):
     def __init__(self, phone_number):
         self.phone_number = phone_number
         self.number = self.clean_number()
+        self.area_code = self.get_area_code()
     
     def clean_number (self):
        self.digits = [item for item in self.phone_number if item.isnumeric()]
@@ -25,6 +26,9 @@ class Phone(object):
                raise ValueError ("invalid area code")
            return result
        raise ValueError ("incorrect phone mumber format")
+
+    def get_area_code(self):
+        return self.clean_number()[:3:]
        
     
     
@@ -34,4 +38,4 @@ class Phone(object):
 
 
 my_number = Phone("+1(223) 456-7890") 
-print(my_number.number)
+print(my_number.area_code)

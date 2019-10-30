@@ -79,9 +79,9 @@ class PhoneNumberTest(unittest.TestCase):
             Phone("1 (223) 156-7890")
 
     # Track specific tests
-    #def test_area_code(self):
-        #number = Phone("2234567890")
-        #self.assertEqual(number.area_code, "223")
+    def test_area_code(self):
+        number = Phone("2234567890")
+        self.assertEqual(number.area_code, "223")
 
     #def test_pretty_print(self):
         #number = Phone("2234567890")
