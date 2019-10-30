@@ -11,10 +11,23 @@ class Phone(object):
     def clean_number (self):
        self.digits = [item for item in self.phone_number if item.isnumeric()]
        if len(self.digits) == 10:
-           return "".join(map(str, self.digits))
-       if len(self.digits) >10 and self.digits[0] == "1":
-           return "".join(map(str, self.digits[1::]))
+           result = "".join(map(str, self.digits))
+           if int(result[0]) < 2:
+               raise ValueError ("invalid area code")
+           if int(result[3]) < 2:
+               raise ValueError ("invalid area code")
+           return result
+       if len(self.digits) >10 and self.digits[0] == "1":           
+           result = "".join(map(str, self.digits[1::]))
+           if int(result[0]) < 2:
+               raise ValueError ("invalid area code")
+           if int(result[3]) < 2:
+               raise ValueError ("invalid area code")
+           return result
        raise ValueError ("incorrect phone mumber format")
+       
+    
+    
     
     
     
