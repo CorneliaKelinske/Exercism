@@ -8,6 +8,7 @@ class Phone(object):
         self.phone_number = phone_number
         self.number = self.clean_number()
         self.area_code = self.get_area_code()
+        #self.pretty = self.print_pretty()
     
     def clean_number (self):
        self.digits = [item for item in self.phone_number if item.isnumeric()]
@@ -29,6 +30,9 @@ class Phone(object):
 
     def get_area_code(self):
         return self.clean_number()[:3:]
+    
+    def pretty(self):
+        return "(" + self.clean_number()[:3:] + ") " + self.clean_number()[3:6:] + "-" + self.clean_number()[6::]
        
     
     
@@ -39,3 +43,4 @@ class Phone(object):
 
 my_number = Phone("+1(223) 456-7890") 
 print(my_number.area_code)
+print(my_number.pretty())
