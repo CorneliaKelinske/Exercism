@@ -18,7 +18,7 @@ verses = {
 def recite(day, verse):
 
     output = ""
-    i = 1
+    i = 2
     if day == 1:        
         intro = "On the first day of Christmas my true love gave to me: "
     elif day == 2:
@@ -32,10 +32,11 @@ def recite(day, verse):
         output = verses[i] + output
         i += 1
 
-
-    return intro + output
+    if day == 1:
+        return intro + verses[1]
+    return intro + output + "and " + verses[1]
 
 
 print(recite(1, 1))
 print(recite(2, 2))
-print(recite(8, 8))
+print(recite(12, 12))
