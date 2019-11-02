@@ -25,7 +25,7 @@ def recite(day, verse):
         intro = f"On the {p.number_to_words(day)}th day of Christmas my true love gave to me: "
     
  
-    return intro + verses[verse - 1]
+    return intro + str(verses[ verse-1 : :-1])
 
 
 print(recite(1, 1))
