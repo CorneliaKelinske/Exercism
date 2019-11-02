@@ -13,18 +13,21 @@ v10 = "ten Lords-a-Leaping,"
 v11 = "eleven Pipers Piping,"
 v12 = "twelve Drummers Drumming,"
 
-def recite(start_verse):
-    if start_verse == 1:
+def recite(day, verse):
+    verses  = [v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12]
+    if day == 1:
         intro = "On the first day of Christmas my true love gave to me: "
-    elif start_verse == 2:
+    elif day == 2:
         intro = "On the second day of Christmas my true love gave to me: "
+    elif day == 8:
+        intro = "On the eighth day of Christmas my true love gave to me: "
     else:
-        intro = f"On the {p.number_to_words(start_verse)}th day of Christmas my true love gave to me: "
+        intro = f"On the {p.number_to_words(day)}th day of Christmas my true love gave to me: "
     
  
-    return intro
+    return intro + verses[verse - 1]
 
 
-print(recite(1))
-print(recite(2))
-print(recite(8))
+print(recite(1, 1))
+print(recite(2, 2))
+print(recite(8, 8))
