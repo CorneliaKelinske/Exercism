@@ -1,20 +1,22 @@
 import inflect
 p = inflect.engine()
-v1 = "a Partridge in a Pear Tree."
-v2 = "two Turtle Doves,"
-v3 = "three French Hens,"
-v4 = "four Calling Birds,"
-v5 = "five Gold Rings,"
-v6 = "six Geese-a-Laying,"
-v7 = "seven Swans-a-Swimming,"
-v8 = "eight Maids-a-Milking,"
-v9 = "nine Ladies Dancing,"
-v10 = "ten Lords-a-Leaping,"
-v11 = "eleven Pipers Piping,"
-v12 = "twelve Drummers Drumming,"
+verses = {
+    1 :"a Partridge in a Pear Tree.",
+    2 : "two Turtle Doves,",
+    3 : "three French Hens,",
+    4 : "four Calling Birds,",
+    5 : "five Gold Rings,",
+    6 : "six Geese-a-Laying,",
+    7 : "seven Swans-a-Swimming,",
+    8 : "eight Maids-a-Milking,",
+    9 : "nine Ladies Dancing,",
+    10 : "ten Lords-a-Leaping,",
+    11 : "eleven Pipers Piping,",
+    12 : "twelve Drummers Drumming,"
+}
 
 def recite(day, verse):
-    verses  = [v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12]
+    
     if day == 1:
         intro = "On the first day of Christmas my true love gave to me: "
     elif day == 2:
