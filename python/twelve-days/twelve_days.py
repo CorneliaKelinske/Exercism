@@ -1,7 +1,7 @@
 import inflect
 p = inflect.engine()
 verses = {
-    1 :"a Partridge in a Pear Tree.",
+    1 : "a Partridge in a Pear Tree.",
     2 : "two Turtle Doves, ",
     3 : "three French Hens, ",
     4 : "four Calling Birds, ",
@@ -33,10 +33,10 @@ def recite(day, verse):
         i += 1
 
     if day == 1:
-        return intro + verses[1]
-    return intro + output + "and " + verses[1]
+        return [intro + verses[1]]
+    return [intro + output + "and " + verses[1]]
 
 
 print(recite(1, 1))
 print(recite(2, 2))
-print(recite(12, 12))
+#print(recite(12, 12))
