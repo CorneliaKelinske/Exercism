@@ -37,7 +37,7 @@ def recite(day, verse):
         intro = f"On the {p.number_to_words(day)}th day of Christmas my true love gave to me: "
 
     
-    if day == verse:
+    for num in range (day, verse+1):
         while i <= verse:
             output = verses[i] + output
             i += 1
@@ -47,6 +47,6 @@ def recite(day, verse):
         return [intro + output + "and " + verses[1]]
 
 
-#print(recite(1, 1))
+print(recite(2, 3))
 #print(recite(2, 2))
 #print(recite(12, 12))
