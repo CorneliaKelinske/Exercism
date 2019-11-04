@@ -154,7 +154,7 @@ class TwelveDaysTest(unittest.TestCase):
             "two Turtle Doves, "
             "and a Partridge in a Pear Tree."
         ]
-        #self.assertEqual(recite(12, 12), expected)
+        self.assertEqual(recite(12, 12), expected)
 
     #def test_recites_first_three_verses_of_the_song(self):
         #expected = [recite(n, n)[0] for n in range(1, 4)]

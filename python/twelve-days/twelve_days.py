@@ -23,20 +23,30 @@ def recite(day, verse):
         intro = "On the first day of Christmas my true love gave to me: "
     elif day == 2:
         intro = "On the second day of Christmas my true love gave to me: "
+    elif day == 3:
+        intro = "On the third day of Christmas my true love gave to me: "
+    elif day == 5:
+        intro = "On the fifth day of Christmas my true love gave to me: "
     elif day == 8:
         intro = "On the eighth day of Christmas my true love gave to me: "
+    elif day == 9:       
+        intro = "On the ninth day of Christmas my true love gave to me: "
+    elif day == 12:       
+        intro = "On the twelfth day of Christmas my true love gave to me: "
     else:
         intro = f"On the {p.number_to_words(day)}th day of Christmas my true love gave to me: "
 
-    while i <= verse:
-        output = verses[i] + output
-        i += 1
+    
+    if day == verse:
+        while i <= verse:
+            output = verses[i] + output
+            i += 1
 
-    if day == 1:
-        return [intro + verses[1]]
-    return [intro + output + "and " + verses[1]]
+        if day == 1:
+            return [intro + verses[1]]
+        return [intro + output + "and " + verses[1]]
 
 
-print(recite(1, 1))
-print(recite(2, 2))
+#print(recite(1, 1))
+#print(recite(2, 2))
 #print(recite(12, 12))
