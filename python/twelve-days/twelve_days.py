@@ -15,38 +15,38 @@ verses = {
     12 : "twelve Drummers Drumming, "
 }
 
-def recite(day, verse):
+def recite(start_verse, end_verse):
 
     output = ""
     i = 2
-    if day == 1:        
+    if start_verse == 1:        
         intro = "On the first day of Christmas my true love gave to me: "
-    elif day == 2:
+    elif start_verse == 2:
         intro = "On the second day of Christmas my true love gave to me: "
-    elif day == 3:
+    elif start_verse == 3:
         intro = "On the third day of Christmas my true love gave to me: "
-    elif day == 5:
+    elif start_verse == 5:
         intro = "On the fifth day of Christmas my true love gave to me: "
-    elif day == 8:
+    elif start_verse == 8:
         intro = "On the eighth day of Christmas my true love gave to me: "
-    elif day == 9:       
+    elif start_verse == 9:       
         intro = "On the ninth day of Christmas my true love gave to me: "
-    elif day == 12:       
+    elif start_verse == 12:       
         intro = "On the twelfth day of Christmas my true love gave to me: "
     else:
-        intro = f"On the {p.number_to_words(day)}th day of Christmas my true love gave to me: "
+        intro = f"On the {p.number_to_words(start_verse)}th day of Christmas my true love gave to me: "
 
+    if start_verse == 1 and end_verse == 1:
+        return [intro + verses[1]]
     
-    for num in range (day, verse+1):
-        while i <= verse:
+    for verse in range (start_verse, end_verse+1):
+        while i <= end_verse:
             output = verses[i] + output
             i += 1
 
-        if day == 1:
-            return [intro + verses[1]]
-        return [intro + output + "and " + verses[1]]
+    return [intro + output + "and " + verses[1]]
 
 
-print(recite(2, 3))
-#print(recite(2, 2))
-#print(recite(12, 12))
+print(recite(1, 1))
+print(recite(2, 2))
+print(recite(12, 12))
