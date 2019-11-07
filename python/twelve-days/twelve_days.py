@@ -45,6 +45,7 @@ def recite(start_verse, end_verse):
             i += 1
             result += intro + output + "and " + verses[1]
         start_verse += 1
+        intro = intro
         print(start_verse)
         print(intro)
 
