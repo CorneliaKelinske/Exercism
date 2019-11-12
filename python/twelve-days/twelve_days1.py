@@ -1,5 +1,6 @@
 verses = {
-    1 : "a Partridge in a Pear Tree.",
+    0 : "a Partridge in a Pear Tree.",
+    1 : "and a Partridge in a Pear Tree.",
     2 : "two Turtle Doves, ",
     3 : "three French Hens, ",
     4 : "four Calling Birds, ",
@@ -30,28 +31,25 @@ intros = {
 
 def recite(start_verse, end_verse):
 
-    def get_intro():
-        return intros[start_verse]
+
+    #def get_intro(verse):
+        #return intros[verse]
     
     if start_verse == 1 and end_verse == 1:
-        return [get_intro() + verses[1]]
+        return [intros[start_verse] + verses[0]]
     
-    output = ""
-    result = ""
-    i = 2
+    pass
+    # for verse in range (start_verse, end_verse):
+    #     result = ""
+    #     get_intro(verse)]=      
+        
+            
 
-    while start_verse < end_verse+1:
-        while i <= end_verse:
-            output = verses[i] + output
-            i += 1
-            result += get_intro() + output + "and " + verses[1]
-        start_verse += 1
-        get_intro()
-        print(get_intro())
+       
 
 
-    return result
+   
 
 #print(recite(1,1))
 #print(recite(5, 5))
-print(recite(1,3))
+print(recite(1,1))
