@@ -31,14 +31,16 @@ intros = {
 
 def recite(start_verse, end_verse):
 
-
+    result = ""
     #def get_intro(verse):
         #return intros[verse]
     
     if start_verse == 1 and end_verse == 1:
         return [intros[start_verse] + verses[0]]
     
-    pass
+    for verse in range(start_verse, end_verse+1):
+        result += intros[verse]
+    return [result]
     # for verse in range (start_verse, end_verse):
     #     result = ""
     #     get_intro(verse)]=      
@@ -52,4 +54,4 @@ def recite(start_verse, end_verse):
 
 #print(recite(1,1))
 #print(recite(5, 5))
-print(recite(1,1))
+print(recite(1,2))
