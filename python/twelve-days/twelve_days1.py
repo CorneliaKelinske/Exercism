@@ -38,13 +38,15 @@ def recite(start_verse, end_verse):
         #return intros[verse]
     
     if start_verse == 1 and end_verse == 1:
-        return [intros[start_verse] + verses[1]]
+        result = intros[start_verse] + verses[1]
     
     while i <= end_verse:
         output = verses[i] + output
         i += 1
-    return [intros[start_verse] + output + "and " + verses[1]]
+    result = intros[start_verse] + output + "and " + verses[1]
+
+    return [result for verse in range(start_verse, end_verse+1)]
 
 
     
-print(recite(3,3))
+print(recite(2,2))
