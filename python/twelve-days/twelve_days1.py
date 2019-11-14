@@ -30,9 +30,9 @@ intros = {
 }
 
 def recite(start_verse, end_verse):
-
-    result = ""
-    song = ""
+    output = ""
+   # result = ""
+    #song = ""
     i = 2
     #def get_intro(verse):
         #return intros[verse]
@@ -40,18 +40,11 @@ def recite(start_verse, end_verse):
     if start_verse == 1 and end_verse == 1:
         return [intros[start_verse] + verses[1]]
     
-    for verse in range(start_verse, end_verse+1):
-        #if verse == 1:
-            #verse_1 = intros[1] + verses[1]
+    while i <= end_verse:
+        output = verses[i] + output
+        i += 1
+    return [intros[start_verse] + output + "and " + verses[1]]
 
-        while i <= verse:            
-            song = verses[i] + song + "and " + verses[1]
-            i += 1
-    
-            result += intros[verse] + song
-            #I think one of the problems is that the verse for the intro does not change. So I need to tackle this next time
 
     
-    return [result]
-
 print(recite(3,3))
