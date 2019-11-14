@@ -40,7 +40,7 @@ def recite(start_verse, end_verse):
     if start_verse == 1 and end_verse == 1:
         result = intros[start_verse] + verses[1]
     
-    while i <= end_verse:
+    while i <= start_verse:
         output = verses[i] + output
         i += 1
     result = intros[start_verse] + output + "and " + verses[1]
@@ -49,4 +49,4 @@ def recite(start_verse, end_verse):
 
 
     
-print(recite(2,2))
+print(recite(2,3))
