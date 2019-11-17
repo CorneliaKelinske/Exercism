@@ -52,6 +52,10 @@ def gifts(num):
         result = gift
     return result
 
-print(gifts(1))
-print(gifts(5))
-print(gifts(12))
+def recite(start_verse, end_verse):
+    return [(f"On the {nth(verse)} of Christmas my true love gave tom me: {gifts(verse)}") for verse in range(start_verse, end_verse+1)]
+
+print(recite(1,1))
+print(recite(8, 8))
+print(recite(1, 2))
+print(recite(2, 5))
