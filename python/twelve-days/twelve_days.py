@@ -1,52 +1,61 @@
 import inflect
 p = inflect.engine()
-verses = {
-    1 : "a Partridge in a Pear Tree.",
-    2 : "two Turtle Doves, ",
-    3 : "three French Hens, ",
-    4 : "four Calling Birds, ",
-    5 : "five Gold Rings, ",
-    6 : "six Geese-a-Laying, ",
-    7 : "seven Swans-a-Swimming, ",
-    8 : "eight Maids-a-Milking, ",
-    9 : "nine Ladies Dancing, ",
-    10 : "ten Lords-a-Leaping, ",
-    11 : "eleven Pipers Piping, ",
-    12 : "twelve Drummers Drumming, "
-}
+
+def nth(num):
+    if num == 1:
+        return "first" 
+    elif num == 2:
+        return "second"
+    elif num == 3:
+        return "third"
+    elif num == 5:
+        return "fifth"
+    elif num == 8:
+        return "eighth"
+    elif num == 9:
+        return "ninth"
+    elif num == 12:
+        return "twelfth"
+    else:
+        return f"{p.number_to_words(num)}th"
+
+def gifts(num):
+    if num == 1:
+        gift = "a Partridge in a Pear Tree."
+    elif num == 2:
+        gift = "two Turtle Doves, and "
+    elif num == 3:
+        gift = "three French Hens, "
+    elif num == 4:
+        gift = "four Calling Birds, "
+    elif num == 5:
+        gift = "five Gold Rings, "
+    elif num == 6:
+        gift = "six Geese-a-Laying, "
+    elif num == 7:
+        gift = "seven Swans-a-Swimming, "
+    elif num == 8:
+        gift = "eight Maids-a-Milking, "
+    elif num == 9:
+        gift = "nine Ladies Dancing, "
+    elif num == 10:
+        gift = "ten Lords-a-Leaping, "
+    elif num == 11:
+        gift = "eleven Pipers Piping, "
+    else:
+        gift = "twelve Drummers Drumming, "
+    
+    if num > 1:
+        result = gift + str(gifts(num-1))
+        
+    else:
+        result = gift
+    return result
 
 def recite(start_verse, end_verse):
+    return [(f"On the {nth(verse)} day of Christmas my true love gave to me: {gifts(verse)}") for verse in range(start_verse, end_verse+1)]
 
-    output = ""
-    i = 2
-    if start_verse == 1:        
-        intro = "On the first day of Christmas my true love gave to me: "
-    elif start_verse == 2:
-        intro = "On the second day of Christmas my true love gave to me: "
-    elif start_verse == 3:
-        intro = "On the third day of Christmas my true love gave to me: "
-    elif start_verse == 5:
-        intro = "On the fifth day of Christmas my true love gave to me: "
-    elif start_verse == 8:
-        intro = "On the eighth day of Christmas my true love gave to me: "
-    elif start_verse == 9:       
-        intro = "On the ninth day of Christmas my true love gave to me: "
-    elif start_verse == 12:       
-        intro = "On the twelfth day of Christmas my true love gave to me: "
-    else:
-        intro = f"On the {p.number_to_words(start_verse)}th day of Christmas my true love gave to me: "
-
-    if start_verse == 1 and end_verse == 1:
-        return [intro + verses[1]]
-   
-    while start_verse < end_verse+1:
-        while i <= end_verse:
-            output = verses[i] + output
-            i += 1
-            
-    return output
-
-
-print(recite(1, 1))
-print(recite(3, 3))
-#print(recite(12, 12))
+print(recite(1,1))
+#print(recite(8, 8))
+#print(recite(1, 2))
+#print(recite(2, 5))
