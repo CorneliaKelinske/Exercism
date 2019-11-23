@@ -1,5 +1,7 @@
 - first eliminate all the dashes and spaces (list comprehension)
 check if len.list is 10 if not: invalid
 check if item in range list[0], len[list] is alpha: then: invalid
-check if item at list[9] isdigt or is X, if not: invalid
+ 
+--> check if item at list[9] isdigt or is X, if not: invalid
+else: convert X into 10 and use existing model
 then do the math
