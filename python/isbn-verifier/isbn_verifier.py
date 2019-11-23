@@ -1,15 +1,15 @@
 def is_valid(isbn):
     isbn_list = [item for item in isbn if item.isalpha() or item.isdigit()]
 
-    if len(isbn_list) != 10:
-        print("I'm in condition 1")
+    if len(isbn_list) != 10:        
         return False
-    for item in range(isbn_list[0], isbn_list[9]):
-        if item.isalpha():
-            print("I'm in condition 2")
-            return False
-    if isbn_list[9] in range(0, 10) or isbn_list[9] == "X":
-        return "Hello"
-    return isbn_list
+    for i in range(0, len(isbn_list)-1):
+        if isbn_list[i].isalpha():
+            return False    
+    if int(isbn_list[9]) >-0 and int(isbn_list[9]) <= 9 or str(isbn_list[9]) == "X":
+        print("I am here")
+        return "HEllO"
+            
+    return False
 
-print(is_valid("3-598-91581-X"))
+print(is_valid("3-598-21508-X"))
