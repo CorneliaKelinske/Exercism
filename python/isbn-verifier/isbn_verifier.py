@@ -8,9 +8,9 @@ def is_valid(isbn):
             return False    
     if isbn_list[9].isdigit() or isbn_list[9] == "X":
        
-        print("I am here")
-        return "HEllO"
+        print ((isbn_list[0]*10))
+        return True
             
     return False
 
-print(is_valid("3-598-21508-9"))
+print(is_valid("3-598-21508-8"))

@@ -5,3 +5,7 @@ check if item in range list[0], len[list] is alpha: then: invalid
 --> check if item at list[9] isdigt or is X, if not: invalid
 else: convert X into 10 and use existing model
 then do the math
+
+X needs to be converted into 10
+all the items in the list are strings, to do the math, they need to be converted into integers
+then do the math
