@@ -6,10 +6,11 @@ def is_valid(isbn):
     for i in range(0, len(isbn_list)-1):
         if isbn_list[i].isalpha():
             return False    
-    if int(isbn_list[9]) >-0 and int(isbn_list[9]) <= 9 or str(isbn_list[9]) == "X":
+    if isbn_list[9].isdigit() or isbn_list[9] == "X":
+       
         print("I am here")
         return "HEllO"
             
     return False
 
-print(is_valid("3-598-21508-X"))
+print(is_valid("3-598-21508-9"))
