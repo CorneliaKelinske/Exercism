@@ -1,0 +1,2 @@
+find a.index(max)) in each item of the list first
+for every candidate, check if it is smaller than corresponding elements at the same index in other elements  in range len.matrix
