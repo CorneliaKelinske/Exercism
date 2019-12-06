@@ -1,5 +1,5 @@
 def saddle_points(matrix):
-    for item in matrix:
-        for num in item if num >
+    coordinates =[[index1,index2] for index1,value1 in enumerate(matrix) for index2,value2 in enumerate(value1)]
+    return coordinates
 
-    pass
+print(saddle_points([[4, 5, 4], [3, 5, 5], [1, 5, 4]]))
