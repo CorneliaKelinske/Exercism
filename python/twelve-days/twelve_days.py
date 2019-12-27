@@ -2,22 +2,22 @@ import inflect
 p = inflect.engine()
 
 def nth(num):
-    if num == 1:
-        return "first" 
-    elif num == 2:
-        return "second"
-    elif num == 3:
-        return "third"
-    elif num == 5:
-        return "fifth"
-    elif num == 8:
-        return "eighth"
-    elif num == 9:
-        return "ninth"
-    elif num == 12:
-        return "twelfth"
-    else:
-        return f"{p.number_to_words(num)}th"
+    # if num == 1:
+    #     return "first" 
+    # elif num == 2:
+    #     return "second"
+    # elif num == 3:
+    #     return "third"
+    # elif num == 5:
+    #     return "fifth"
+    # elif num == 8:
+    #     return "eighth"
+    # elif num == 9:
+    #     return "ninth"
+    # elif num == 12:
+    #     return "twelfth"
+    # else:
+        return f"{p.ordinal(p.number_to_words(num))}"
 
 def gifts(num):
     if num == 1:
@@ -55,7 +55,7 @@ def gifts(num):
 def recite(start_verse, end_verse):
     return [(f"On the {nth(verse)} day of Christmas my true love gave to me: {gifts(verse)}") for verse in range(start_verse, end_verse+1)]
 
-print(recite(1,1))
+print(recite(1,10))
 #print(recite(8, 8))
 #print(recite(1, 2))
 #print(recite(2, 5))
