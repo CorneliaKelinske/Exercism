@@ -11,23 +11,20 @@ gift_list = [
     "ten Lords-a-Leaping, ", "eleven Pipers Piping, ", "twelve Drummers Drumming, "
 ]
 
+def maybe_and(num):
+    if num == 2:
+        return " and "
+    return ""
 
 def gifts(num):
    gift = gift_list[num - 1]
    
-   if num == 2:
-       result = gift + " and " + str(gifts(num-1))
-   elif num > 1:
-        result = gift + str(gifts(num-1))
+   if num > 1:
+       result = f"{gift}{maybe_and(num)}{gifts(num-1)}"
         
    else:
         result = gift
    return result
-
-def maybe_and(num):
-    if num == 2:
-        return "and"
-    return ""
 
 
 def recite(start_verse, end_verse):   
