@@ -13,19 +13,21 @@
 # def row(matrix, index):
 #     return matrix[index].copy()
 
-# def column(matrix, index):
-#     return [item[index] for item in matrix]
+def column(m, i):
+     return [item[i] for item in m]
 
 def saddle_points(matrix):
     row_maxes = []
-    # saddle_points = []
+    saddle_points = []
     for row in matrix:
         for ind, item in enumerate(row):
             if item == max(row):
                 print (item)
                 row_maxes.append((matrix.index(row),ind))
     for item in row_maxes:
-        print(row_maxes.index(item))
+        if matrix[item[0]][item[1]] == min(column(matrix,item[1])):
+            saddle_points.append(item)
+        print(saddle_points)
 
  
 
