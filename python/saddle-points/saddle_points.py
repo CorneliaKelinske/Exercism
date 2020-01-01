@@ -18,11 +18,18 @@
 
 def saddle_points(matrix):
     row_maxes = []
+    # saddle_points = []
     for row in matrix:
         for ind, item in enumerate(row):
             if item == max(row):
                 print (item)
                 row_maxes.append((matrix.index(row),ind))
+    for item in row_maxes:
+        print(row_maxes.index(item))
+
+ 
+
+    
     return row_maxes
 
 print(saddle_points([[4, 5, 6], [3, 5, 5], [1, 5, 4, 5]]))
