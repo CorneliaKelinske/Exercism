@@ -19,19 +19,24 @@ def column(m, i):
 def saddle_points(matrix):
     row_maxes = []
     saddle_points = []
+    for item in matrix:
+        if (len(item)) < len(max(matrix, key=len)):
+            item.append(0)
+    
     for row in matrix:
         for ind, item in enumerate(row):
             if item == max(row):
-                print (item)
+                #print (item)
                 row_maxes.append((matrix.index(row),ind))
     for item in row_maxes:
         if matrix[item[0]][item[1]] == min(column(matrix,item[1])):
             saddle_points.append(item)
-        print(saddle_points)
+        #print(dict(saddle_points))
+        print([{f"row: {item[0]+1}" : f"column: {item[1]+1}" for item in saddle_points}])
 
  
 
     
     return row_maxes
 
-print(saddle_points([[4, 5, 6], [3, 5, 5], [1, 5, 4, 5]]))
+print(saddle_points([[4, 5, 4], [3, 5, 5], [1, 5, 4]]))
