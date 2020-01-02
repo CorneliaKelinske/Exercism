@@ -31,12 +31,11 @@ def saddle_points(matrix):
     for item in row_maxes:
         if matrix[item[0]][item[1]] == min(column(matrix,item[1])):
             saddle_points.append(item)
-        #print(dict(saddle_points))
-        print([{f"row: {item[0]+1}" : f"column: {item[1]+1}" for item in saddle_points}])
+       
 
  
 
     
-    return row_maxes
+    return [{"row" : item[0]+1, "column" : item[1]+1} for item in saddle_points]
 
 print(saddle_points([[4, 5, 4], [3, 5, 5], [1, 5, 4]]))
