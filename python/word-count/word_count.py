@@ -1,12 +1,30 @@
 import string
 
+def counter(list, input_word):
+        count = 0
+                       
+        for item in list:
+            if item == input_word:
+                count += 1
+        return count
+
+
 def count_words(sentence):
     sentence = sentence.lower()
     for char in string.punctuation:
-        sentence = sentence.replace(char, ' ')
+        if char != "'":
+            sentence = sentence.replace(char, ' ')
         sen_list = sentence.split()
+    
+    words = []
+    results = {}
+    for word in sen_list:
+        if word not in words:
+            words.append(word)
+            results.update({word :  counter(sen_list, word)})
 
-    return sen_list
+    
+    return results
 
 
 
