@@ -4,6 +4,7 @@
 
 import re
 
+
 m = re.compile(r'(^AUG)(?P<rest>\w*)') #Methionine
 ph = re.compile(r'(^UUU|^UUC)(?P<rest>\w*)') #Phenylalanine
 l = re.compile(r'(^UUA|^UUG)(?P<rest>\w*)') #Leucine
