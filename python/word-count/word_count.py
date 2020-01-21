@@ -18,6 +18,7 @@ def count_words(sentence):
         if char != ok:
             sentence = sentence.replace(char, ' ')
         sen_list = sentence.split()
+        #print(sen_list)
     
     words = []
     results = {}
@@ -31,4 +32,4 @@ def count_words(sentence):
 
 
 
-print(count_words(",\n,one,\n ,two \n 'three'"))
+print(count_words("First: don't laugh. Then: don't cry."))
