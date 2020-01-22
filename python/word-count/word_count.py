@@ -3,6 +3,7 @@ import re
 
 ok = re.compile(r'\w+\'\w+')
 
+
 def counter(list, input_word):
         count = 0
                        
@@ -15,8 +16,10 @@ def counter(list, input_word):
 def count_words(sentence):
     sentence = sentence.lower()
     for char in string.punctuation:
+        print(char)
         if char != ok:
             sentence = sentence.replace(char, ' ')
+        
         sen_list = sentence.split()
         #print(sen_list)
     
