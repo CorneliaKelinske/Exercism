@@ -1,7 +1,7 @@
 import string
 import re
 
-ok = re.compile(r'\w+\'\w+')
+not_ok = re.compile(r'\'\w+\'')
 
 
 def counter(list, input_word):
@@ -16,12 +16,13 @@ def counter(list, input_word):
 def count_words(sentence):
     sentence = sentence.lower()
     for char in string.punctuation:
-        print(char)
-        if char != ok:
+        #print(char)
+        if char != "'":
             sentence = sentence.replace(char, ' ')
         
-        sen_list = sentence.split()
-        #print(sen_list)
+    sen_list = sentence.split()
+    sen_list = [item[1:len(item-1)] if item == 'large' else item for item in sen_list]
+    print(sen_list)
     
     words = []
     results = {}
@@ -35,4 +36,4 @@ def count_words(sentence):
 
 
 
-print(count_words("First: don't laugh. Then: don't cry."))
+print(count_words("Joe can't tell between 'large' and large."))
