@@ -19,11 +19,12 @@ def count_words(sentence):
         #print(char)
         if char != "'":
             sentence = sentence.replace(char, ' ')
+    # for not_ok in sentence:
+    #     print(not_ok)
+    print(not_ok.findall(sentence))
         
     sen_list = sentence.split()
-    sen_list = [item[1:len(item-1)] if item == 'large' else item for item in sen_list]
-    print(sen_list)
-    
+   
     words = []
     results = {}
     for word in sen_list:
