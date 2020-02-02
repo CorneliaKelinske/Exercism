@@ -1,7 +1,7 @@
 import string
 import re
 
-not_ok = re.compile(r'(\')(\w+)(\')')
+pattern = re.compile(r'(\')(\w+)(\')')
 
 
 def counter(list, input_word):
@@ -16,13 +16,11 @@ def counter(list, input_word):
 def count_words(sentence):
     sentence = sentence.lower()
     for char in string.punctuation:
-        # print(char)
+        
         if char != "'":
             sentence = sentence.replace(char, ' ')
-    # for not_ok in sentence:
-    #     print(not_ok)
-    eliminate = not_ok.sub("\g<2>", sentence)
-    print(eliminate)
+    
+    eliminate = pattern.sub("\g<2>", sentence)   
 
     sen_list = eliminate.split()
 
