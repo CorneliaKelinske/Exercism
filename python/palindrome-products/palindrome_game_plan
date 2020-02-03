@@ -1,0 +1,14 @@
+1. Function that gets me the products and the factors as a dictionary.
+    - figure out a way to avoid duplication; idea: multiply each number with itself and all the numbers higher than itself
+    - output is {product : (factor1, factor2)}
+
+2. Function that checks if a number is a palindrome
+    - convert int into a string
+    - reverse string
+    - compare strings
+    - if identical: true
+
+3. the actual functions:
+    - run the get_product function on the range
+    - run the is_palindrome function on the products
+    - find the max or min and then figure out a way to return it with all available factors
