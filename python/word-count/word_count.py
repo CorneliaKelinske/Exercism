@@ -15,18 +15,15 @@ def count_words(sentence):
     for char in string.punctuation:
         
         if char != "'":
-            sentence = sentence.replace(char, ' ')
-    
+            sentence = sentence.replace(char, ' ')    
     
 
     sen_list = [word.strip("'") for word in sentence.split()]
 
-    words = []
+    
     results = {}
-    for word in sen_list:
-        if word not in words:
-            words.append(word)
-            results.update({word:  counter(sen_list, word)})
+    for word in sen_list:   
+        results.update({word:  counter(sen_list, word)})
 
     return results
 
