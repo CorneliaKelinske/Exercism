@@ -17,7 +17,15 @@ def is_palindrome(num):
     if str(num) == str(num)[::-1]:
         return True
 
+def all_palindromes(min_factor, max_factor):
+    results = []
+    for key in products(min_factor, max_factor):
+        if is_palindrome(key):
+            results.append(key)
+
+    return results
 
 
-print(is_palindrome(223))
-#print(products(1, 3))
+
+#print(is_palindrome(131))
+print(all_palindromes(10, 99))
