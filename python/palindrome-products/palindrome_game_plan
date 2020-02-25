@@ -12,3 +12,13 @@
     - run the get_product function on the range
     - run the is_palindrome function on the products
     - find the max or min and then figure out a way to return it with all available factors
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+And this game plan above did not work...
+
+1. I get all the products, but not the factors. Each number is only included once.
+
+2. Later I cannot properly iterate over the dictionary
+
+3. New idea: function to get all the products. Work with a list of tuples instead of dict.

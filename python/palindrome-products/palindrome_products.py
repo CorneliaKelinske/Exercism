@@ -1,9 +1,3 @@
-# def largest(min_factor, max_factor):
-#     pass
-
-
-# def smallest(min_factor, max_factor):
-#     pass
 
 
 # def products(num1, num2):
@@ -38,18 +32,19 @@ def is_palindrome(num):
 #     return max(palindromes)
 
 def smallest (min_factor, max_factor):
-    all_products = {}
-    palindromes = {}
+    all_products = []
+    palindromes = []
 
     for num_a in range(min_factor, max_factor+1):
         for num_b in range(num_a, max_factor+1):
-            all_products.update({num_a * num_b: (num_a, num_b)})
+            all_products.append( (num_a * num_b, (num_a, num_b)))
 
-    for key in all_products:
-        if is_palindrome(key):
-            palindromes.update({key : all_products[key]})
+    for item in all_products:
+        if is_palindrome(item[0]):
+            palindromes.append(item)
+    return max(palindromes)
     
-    smallest_palin = min(palindromes)
-    return smallest_palin
+    # smallest_palin = min(palindromes)
+    
 
-print(smallest(9, 20))
+print(smallest(1, 9))
