@@ -34,15 +34,24 @@ def is_palindrome(num):
 def smallest (min_factor, max_factor):
     all_products = []
     palindromes = []
+    results = []
 
     for num_a in range(min_factor, max_factor+1):
         for num_b in range(num_a, max_factor+1):
-            all_products.append( (num_a * num_b, (num_a, num_b)))
+            all_products.append( [num_a * num_b, (num_a, num_b)])
 
     for item in all_products:
         if is_palindrome(item[0]):
             palindromes.append(item)
-    return max(palindromes)
+    
+    palindromes_only = [item[0] for item in palindromes]
+    
+    for item in palindromes:
+        if item[0] == max(palindromes_only):
+            results.append(item)
+
+    
+    return results
     
     # smallest_palin = min(palindromes)
     
