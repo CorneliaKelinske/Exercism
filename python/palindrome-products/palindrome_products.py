@@ -27,7 +27,7 @@ def smallest (min_factor, max_factor):
             results.append(item)
 
     
-    return {"value" : results[0][0], "factors" : [item[1] for item in results]}
+    return (results[0][0], [item[1] for item in results])
 
 def largest (min_factor, max_factor):
     all_products = []
@@ -49,7 +49,7 @@ def largest (min_factor, max_factor):
             results.append(item)
 
     
-    return {"value" : results[0][0], "factors" : [item[1] for item in results]}
+    return (results[0][0],  [item[1] for item in results])
     
 
 print(smallest(1, 9))
