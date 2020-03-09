@@ -11,5 +11,4 @@ def score(word):
         result +=(points[char])
     return result
 
-print(score("cabbage"))
 
