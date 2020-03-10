@@ -1,10 +1,5 @@
-def equal_sides(numbers):
-    equals = []
-    for num1 in numbers:
-        for num2 in numbers:
-            if num1 == num2:
-                equals.append(num1)
-    return list(dict.fromkeys(equals))
+def equal_sides(numbers):    
+    return list(dict.fromkeys(numbers))
 
 
 def equilateral(sides):
