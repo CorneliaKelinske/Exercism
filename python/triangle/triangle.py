@@ -9,7 +9,7 @@ def equilateral(sides):
 
 
 def isosceles(sides):
-    if len(remove_duplicates(sides))>= 2:
+    if len(remove_duplicates(sides))<= 2:
         return True
     return False
 
@@ -25,7 +25,9 @@ def scalene(sides):
 # print(equilateral([2,2,2]))
 
 print(isosceles([1,2,2]))
+print(remove_duplicates([2,3,4]))
 print(isosceles([2,3,4]))
+print(remove_duplicates([2,2,2]))
 print(isosceles([2,2,2]))
 
 print(scalene([1,2,2]))
