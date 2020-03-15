@@ -17,8 +17,9 @@ def triangle_check(numbers):
 
 
 def equilateral(sides):
-    if len(remove_duplicates(sides)) == 1:
-        return True
+    if triangle_check(sides) == True:
+        if len(remove_duplicates(sides)) == 1:
+            return True
     return False
 
 
@@ -31,23 +32,8 @@ def isosceles(sides):
 
 
 def scalene(sides):
-    if len(remove_duplicates(sides))== 3:
-        return True
+    if triangle_check(sides) == True:
+        if len(remove_duplicates(sides))== 3:
+            return True
     return False
 
-
-# print(equilateral([1,2,2]))
-# print(equilateral([1,2,4]))
-# print(equilateral([2,2,2]))
-
-# print(isosceles([1,2,2]))
-# print(remove_duplicates([2,3,4]))
-# print(isosceles([2,3,4]))
-# print(remove_duplicates([2,2,2]))
-# print(isosceles([2,2,2]))
-
-# print(scalene([1,2,2]))
-# print(scalene([1,2,4]))
-# print(scalene([2,2,2]))
-
-print(triangle_check([1,1,3]))
