@@ -8,9 +8,9 @@ def triangle_check(numbers):
    
     if not numbers[0] + numbers[1] >= numbers[2]:
         return False
-    elif not numbers[0] + numbers[2] >= numbers[1]:
+    if not numbers[0] + numbers[2] >= numbers[1]:
         return False
-    elif not numbers[2] + numbers[1] >= numbers[0]:
+    if not numbers[2] + numbers[1] >= numbers[0]:
         return False
     return True
 
@@ -25,7 +25,6 @@ def equilateral(sides):
 
 def isosceles(sides):
     if triangle_check(sides) == True:
-
         if len(remove_duplicates(sides))<= 2:
             return True
     return False
