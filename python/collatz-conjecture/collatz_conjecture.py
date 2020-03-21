@@ -1,5 +1,7 @@
 def steps(number):
     steps = 0
+    if number<= 0:
+        raise ValueError("Number must be positive")
     while number != 1:
         if number %2 == 0:
             number = number/2
@@ -9,4 +11,4 @@ def steps(number):
             steps +=1
     return steps
 
-print(steps(12))
+#print(steps(0))
