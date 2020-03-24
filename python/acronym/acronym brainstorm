@@ -1,2 +1,4 @@
-probably need to use a regex. with groups. regex would be empty space or -as group 1 
-and the letter after as group 2 maybe
+Different approach.
+Replace "-" with " "
+Split string on " ".
+und dann item[0] upper for item in list
