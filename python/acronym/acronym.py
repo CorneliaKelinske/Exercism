@@ -5,7 +5,7 @@ def abbreviate(words):
     for item in words:
         result.append(item[0])
 
-    return "".join(result)
+    return "".join(result).upper()
 
 
-print(abbreviate("Portable-Network Graphics"))
+print(abbreviate("Portable-network Graphics"))
