@@ -2,6 +2,7 @@ def abbreviate(words):
     words = words.replace("-", " ")
     print(words)
     words = words.split(" ")
+    words = [item for item in words if item != ""]
     print(words)
 
     # for item in words:
@@ -9,11 +10,14 @@ def abbreviate(words):
     #         words.remove(item)
     result = []
     for item in words:
-        result.append(item[0])
+        if item[0].isalpha():
+            result.append(item[0])
+        else:
+            result.append(item[1])
     
     # return words
 
     return "".join(result).upper()
 
 
-print(abbreviate("The Road _Not_ Taken"))
+print(abbreviate("Something - _I made up from thin air"))
