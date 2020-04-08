@@ -1,0 +1,7 @@
+on field 1, 1
+field 2 = field 2 - 1 x 2
+field 3 = field 3 - 1 x2
+
+i need always the number on the field before and double 
+
+need function to get a number to double, and then double it
