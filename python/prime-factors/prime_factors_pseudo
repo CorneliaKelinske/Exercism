@@ -1,4 +1,9 @@
 I take a number.
+I need to get all the prime numbers in the range betweeen 2 and said number.
+write separate function for it.
+have a list of the prime numbers
+start with 2
 divide by 2. 
 if modulus is 0, I add 2 to the list.
 then take result divide by 2 until modulus is not zero.
+go to next number.
