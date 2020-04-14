@@ -1,0 +1,4 @@
+I take a number.
+divide by 2. 
+if modulus is 0, I add 2 to the list.
+then take result divide by 2 until modulus is not zero.
