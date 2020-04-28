@@ -1,0 +1,8 @@
+need to read up on classes again
+i need a 'Garden' class that takes in a string, representing the plants in two lines.
+each child has two pots (aka letters) per lines
+ a dictionary to assign letters to plants
+ i want to split the two lines into two lists
+ each kid has certain slices of these lists
+ dict to match each kid to its slice
+ and a garden.plants method that returns the plants for a given kid.
