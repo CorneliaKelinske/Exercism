@@ -12,6 +12,9 @@ class Garden:
     ]):
         self.diagram = diagram
         self.students = students
+    
+    def plants(self, name):
+            pass
         
 
 
