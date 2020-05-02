@@ -14,9 +14,10 @@ class Garden:
         self.students = students
     
     def plants(self, name):
-            pass
+            return name
         
 
 
 garden = Garden("RC\nGG")
 print(garden.diagram)
+print(garden.plants("Alice"))
