@@ -17,9 +17,14 @@ class Garden:
     def plants(self, name):
             rows = self.diagram.split("\n")
 
-            return [item[kids_indexes[name][0]] for item in rows]
+            plants_short = [(item[kids_indexes[name][0]], item[kids_indexes[name][1]]) for item in rows]
+            plants_long = []
+
+            for item in plants_short:
+                for letter in item:
+                    plants_long.append(plant_names[letter])
         
-            #return kids_indexes[name]
+            return plants_long
         
 
 
