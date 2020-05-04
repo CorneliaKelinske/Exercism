@@ -16,11 +16,13 @@ class Garden:
     
     def plants(self, name):
             rows = self.diagram.split("\n")
+
+            return [item[kids_indexes[name][0]] for item in rows]
         
-            return kids_indexes[name]
+            #return kids_indexes[name]
         
 
 
 garden = Garden("VVCCGG\nVVCCGG")
-print(garden.diagram)
+#print(garden.diagram)
 print(garden.plants("Alice"))
