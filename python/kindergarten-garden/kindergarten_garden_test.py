@@ -64,13 +64,13 @@ class KindergartenGardenTest(unittest.TestCase):
             garden.plants("Patricia"), ["Violets", "Clover", "Radishes", "Violets"]
         )
 
-    # def test_students_are_unordered_last_student(self):
-    #     garden = Garden(
-    #         "VCRRGVRG\nRVGCCGCV", students=["Samantha", "Patricia", "Xander", "Roger"]
-    #     )
-    #     self.assertEqual(
-    #         garden.plants("Xander"), ["Radishes", "Grass", "Clover", "Violets"]
-    #     )
+    def test_students_are_unordered_last_student(self):
+         garden = Garden(
+             "VCRRGVRG\nRVGCCGCV", students=["Samantha", "Patricia", "Xander", "Roger"]
+         )
+         self.assertEqual(
+             garden.plants("Xander"), ["Radishes", "Grass", "Clover", "Violets"]
+         )
 
 
 if __name__ == "__main__":

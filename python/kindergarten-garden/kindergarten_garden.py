@@ -1,7 +1,5 @@
 plant_names = {"R": "Radishes", "C": "Clover", "G": "Grass", "V": "Violets"}
-kids_indexes = {"Alice":(0,1), "Bob" : (2,3) , "Charlie" : (4,5), "David" : (6,7),
-            "Eve" : (8,9), "Fred" : (10, 11), "Ginny" : (12, 13), "Harriet" : (14, 15),
-            "Ileana" : (16, 17), "Joseph" : (18, 19), "Kincaid" : (20, 21), "Larry" : (22, 23)}
+
 
 
 class Garden:
@@ -13,27 +11,31 @@ class Garden:
         self.diagram = diagram
         self.students = students
     
-    #here I need to define a function that orders the students alphabetically and returns the new kids_indexes
+    
     def assign_index(self):
+        index = 0
+        indexes = {}
         self.students.sort()
-        return self.students
+        for student in self.students:
+            indexes.update({student:(index, index+1)})
+            index += 2
+        return indexes
     
         
     
     def plants(self, name):
             rows = self.diagram.split("\n")
+            kids_indexes = self.assign_index()
 
             plants_short = [(item[kids_indexes[name][0]], item[kids_indexes[name][1]]) for item in rows]
-            plants_long = []
+            plants_full = []
 
             for item in plants_short:
                 for letter in item:
-                    plants_long.append(plant_names[letter])
+                    plants_full.append(plant_names[letter])
         
-            return plants_long
+            return plants_full
         
 
 
-garden = Garden("VVCCGG\nVVCCGG")
-print(garden.assign_index())
-print(garden.plants("Alice"))
+
