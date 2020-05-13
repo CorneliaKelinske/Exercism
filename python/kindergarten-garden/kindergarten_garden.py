@@ -14,6 +14,10 @@ class Garden:
         self.students = students
     
     #here I need to define a function that orders the students alphabetically and returns the new kids_indexes
+    def assign_index(self):
+        self.students.sort()
+        return self.students
+    
         
     
     def plants(self, name):
@@ -31,5 +35,5 @@ class Garden:
 
 
 garden = Garden("VVCCGG\nVVCCGG")
-#print(garden.diagram)
+print(garden.assign_index())
 print(garden.plants("Alice"))
