@@ -12,6 +12,8 @@ class Garden:
     ]):
         self.diagram = diagram
         self.students = students
+    
+    #here I need to define a function that orders the students alphabetically and returns the new kids_indexes
         
     
     def plants(self, name):

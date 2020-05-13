@@ -56,13 +56,13 @@ class KindergartenGardenTest(unittest.TestCase):
 
     # Additional tests for this track
 
-    # def test_students_are_unordered_first_student(self):
-    #     garden = Garden(
-    #         "VCRRGVRG\nRVGCCGCV", students=["Samantha", "Patricia", "Xander", "Roger"]
-    #     )
-    #     self.assertEqual(
-    #         garden.plants("Patricia"), ["Violets", "Clover", "Radishes", "Violets"]
-    #     )
+    def test_students_are_unordered_first_student(self):
+        garden = Garden(
+            "VCRRGVRG\nRVGCCGCV", students=["Samantha", "Patricia", "Xander", "Roger"]
+        )
+        self.assertEqual(
+            garden.plants("Patricia"), ["Violets", "Clover", "Radishes", "Violets"]
+        )
 
     # def test_students_are_unordered_last_student(self):
     #     garden = Garden(
