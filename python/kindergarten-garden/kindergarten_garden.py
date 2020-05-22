@@ -1,13 +1,14 @@
-plant_names = {"R": "Radishes", "C": "Clover", "G": "Grass", "V": "Violets"}
+PLANT_NAMES = {"R": "Radishes", "C": "Clover", "G": "Grass", "V": "Violets"}
+STUDENTS = [
+            "Alice", "Bob", "Charlie", "David",
+            "Eve", "Fred", "Ginny", "Harriet",
+            "Ileana", "Joseph", "Kincaid", "Larry"
+    ]
 
 
 
 class Garden:
-    def __init__(self, diagram, students=[
-            "Alice", "Bob", "Charlie", "David",
-            "Eve", "Fred", "Ginny", "Harriet",
-            "Ileana", "Joseph", "Kincaid", "Larry"
-    ]):
+    def __init__(self, diagram, students=STUDENTS):
         self.diagram = diagram
         self.students = students
     
@@ -32,7 +33,7 @@ class Garden:
 
             for item in plants_short:
                 for letter in item:
-                    plants_full.append(plant_names[letter])
+                    plants_full.append(PLANT_NAMES[letter])
         
             return plants_full
         
