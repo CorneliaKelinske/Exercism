@@ -25,7 +25,7 @@ class Garden:
         
     
     def plants(self, name):
-            rows = self.diagram.split("\n")
+            rows = self.diagram.splitlines()
             kids_indexes = self.assign_index()
 
             plants_short = [(item[kids_indexes[name][0]], item[kids_indexes[name][1]]) for item in rows]
