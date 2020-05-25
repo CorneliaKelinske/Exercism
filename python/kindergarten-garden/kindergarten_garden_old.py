@@ -4,12 +4,15 @@ STUDENTS = [
             "Eve", "Fred", "Ginny", "Harriet",
             "Ileana", "Joseph", "Kincaid", "Larry"
     ]
+
+
+
 class Garden:
     def __init__(self, diagram, students=STUDENTS):
         self.diagram = diagram
         self.students = students
-       
-
+    
+    
     def assign_index(self):
         index = 0
         indexes = {}
@@ -18,7 +21,9 @@ class Garden:
             indexes.update({student:(index, index+1)})
             index += 2
         return indexes
-
+    
+        
+    
     def plants(self, name):
             rows = self.diagram.splitlines()
             kids_indexes = self.assign_index()
@@ -32,9 +37,10 @@ class Garden:
         
             return plants_full
 
- #before: used one name, got the plants for that name, converted the plants.
- #next step: do the same thing for each kid in students. append kid + the plants that go with it to a dict
- #update dict with long names
-     
+        
 garden = Garden("VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV")
-print(garden.plants("Alice"))
+print
+        
+
+
+
