@@ -8,7 +8,7 @@ class Garden:
     def __init__(self, diagram, students=STUDENTS):
         self.diagram = diagram
         self.students = students
-        self.student_plants = self.students_plants()
+        self.stud_plants = self.students_plants()
        
 
     def assign_index(self):
@@ -29,10 +29,16 @@ class Garden:
                 plants_short.update({student:[(item[kids_indexes[student][0]], item[kids_indexes[student][1]]) for item in rows]})       
             return plants_short
 
-    #def plants(self, name):
+    def plants(self, name):
+        plants_full = []
+        for item in self.stud_plants[name]:
+                for letter in item:
+                    plants_full.append(PLANT_NAMES[letter])
+        
+        return plants_full 
 
 
 
      
 garden = Garden("VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV")
-print(garden.students_plants())
+print(garden.plants("Bob"))
