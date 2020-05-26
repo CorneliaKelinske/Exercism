@@ -8,6 +8,7 @@ class Garden:
     def __init__(self, diagram, students=STUDENTS):
         self.diagram = diagram
         self.students = students
+        self.student_plants = self.plants()
        
 
     def assign_index(self):
@@ -19,13 +20,13 @@ class Garden:
             index += 2
         return indexes
 
-    def plants(self, students):
+    def plants(self):
             rows = self.diagram.splitlines()
             kids_indexes = self.assign_index()
             plants_short = {}
 
-            for name in students:
-                plants_short ={name:(item[kids_indexes[name][0]], item[kids_indexes[name][1]]) for item in rows}
+            for student in self.students:
+                plants_short.update({student:(item[kids_indexes[student][0]], item[kids_indexes[student][1]]) for item in rows})
             # plants_full = []
 
             # for item in plants_short:
@@ -39,4 +40,4 @@ class Garden:
  #update dict with long names
      
 garden = Garden("VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV")
-print(garden.plants("students"))
+print(garden.plants())
