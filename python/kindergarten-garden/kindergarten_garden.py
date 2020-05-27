@@ -40,5 +40,5 @@ class Garden:
 
 
      
-garden = Garden("VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV")
-print(garden.plants("Bob"))
+garden = Garden("RC\nGG")
+print(garden.plants("Alice"))
