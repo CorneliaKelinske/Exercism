@@ -1,4 +1,4 @@
-PLANT_NAMES = {"R": "Radishes", "C": "Clover", "G": "Grass", "V": "Violets"}
+PLANT_NAMES = {"R": "Radishes", "C": "Clover", "G": "Grass", "V": "Violets", "0":"Did not plant anything"}
 STUDENTS = [
             "Alice", "Bob", "Charlie", "David",
             "Eve", "Fred", "Ginny", "Harriet",
@@ -23,6 +23,17 @@ class Garden:
     def students_plants(self):
             rows = self.diagram.splitlines()
             kids_indexes = self.assign_index()
+            item_a = rows[0]
+            item_b = rows[1]
+            
+            
+            while len(item_a) <= len(self.students) * 2:
+                item_a += "00"
+            while len(item_b) <= len(self.students) * 2:
+                item_b += "00"
+          
+            print(item_a)
+            print(item_b)
             plants_short = {}
 
             for student in self.students:
@@ -40,5 +51,5 @@ class Garden:
 
 
      
-garden = Garden("RC\nGG")
+garden = Garden("VRCGVVRVCGGCCGVRGCVCGC\nVRCCCGCRRGVCGCRVVCVGCG")
 print(garden.plants("Alice"))
