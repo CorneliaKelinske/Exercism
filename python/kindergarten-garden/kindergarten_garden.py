@@ -9,7 +9,25 @@ class Garden:
         self.diagram = diagram
         self.students = students
         self.stud_plants = self.students_plants()
+        self.adjusted_diagram = self.adjust_diagram()
        
+    def adjust_diagram(self):
+        rows = self.diagram.splitlines()
+        full_garden = []
+        
+        item_a = rows[0]
+        item_b = rows[1]            
+            
+        while len(item_a) <= len(self.students) * 2:
+            item_a += "00"
+        while len(item_b) <= len(self.students) * 2:
+            item_b += "00"
+          
+        print(item_a)
+        print(item_b)
+        full_garden.append(item_a)
+        full_garden.append(item_b)
+        return full_garden
 
     def assign_index(self):
         index = 0
@@ -21,23 +39,14 @@ class Garden:
         return indexes
 
     def students_plants(self):
-            rows = self.diagram.splitlines()
-            kids_indexes = self.assign_index()
-            item_a = rows[0]
-            item_b = rows[1]
-            
-            
-            while len(item_a) <= len(self.students) * 2:
-                item_a += "00"
-            while len(item_b) <= len(self.students) * 2:
-                item_b += "00"
-          
-            print(item_a)
-            print(item_b)
+            #rows = self.adjust_diagram().splitlines()
+            kids_indexes = self.assign_index()                        
             plants_short = {}
+            plant_rows = self.adjust_diagram()
 
-            for student in self.students:
-                plants_short.update({student:[(item[kids_indexes[student][0]], item[kids_indexes[student][1]]) for item in rows]})       
+            for item in plant_rows:
+                for student in self.students:
+                 plants_short.update({student:[(item[kids_indexes[student][0]], item[kids_indexes[student][1]]) for letter in item]})       
             return plants_short
 
     def plants(self, name):
@@ -52,4 +61,4 @@ class Garden:
 
      
 garden = Garden("VRCGVVRVCGGCCGVRGCVCGC\nVRCCCGCRRGVCGCRVVCVGCG")
-print(garden.plants("Alice"))
+print(garden.plants("Bob"))
