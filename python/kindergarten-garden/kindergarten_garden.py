@@ -44,10 +44,9 @@ class Garden:
         plant_rows = self.adjust_diagram()
 
             
-        for student in kids_indexes:
-            plants_short.update({student:["PlantA", "PlantB"]})
-
-               
+        #for student in kids_indexes:
+        plants_short.update({"Alice":plant_rows[kids_indexes["Alice"][1]]})       
+            #  plants_short.update({student:[plant_rows[0][kids_indexes[student][0], plant_rows[0][kids_indexes[student][1], plant_rows[1][kids_indexes[student][0],plant_rows[1][kids_indexes[student][1]]}) 
             
         return plants_short
             
