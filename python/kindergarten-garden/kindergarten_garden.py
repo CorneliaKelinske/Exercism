@@ -38,18 +38,21 @@ class Garden:
             index += 2
         return indexes
 
-    def students_plants(self):
-            #rows = self.adjust_diagram().splitlines()
-            kids_indexes = self.assign_index()                        
-            plants_short = {}
-            plant_rows = self.adjust_diagram()
+    def students_plants(self):        
+        kids_indexes = self.assign_index()                        
+        plants_short = {}
+        plant_rows = self.adjust_diagram()
 
-            for student in kids_indexes:
-                #plants_short.update({student:[plant_rows[0][kids_indexes[student][0], plant_rows[0][kids_indexes[student][1], plant_rows[1][kids_indexes[student][0],plant_rows[1][kids_indexes[student][1]]})
-                plants_short.update({student:[plant_rows[0][kids_indexes[student][0], plant_rows[0][kids_indexes[student][1], plant_rows[1][kids_indexes[student][0],plant_rows[1][kids_indexes[student][1]]})
+            
+        for student in kids_indexes:
+            plants_short.update({student:["PlantA", "PlantB"]})
 
-                # plants_short.update({student:[(item[kids_indexes[student][0]], item[kids_indexes[student][1]]) for letter in item]})       
-            return plants_short
+               
+            
+        return plants_short
+            
+
+                
 
     def plants(self, name):
         plants_full = []
@@ -63,4 +66,4 @@ class Garden:
 
      
 garden = Garden("VRCGVVRVCGGCCGVRGCVCGC\nVRCCCGCRRGVCGCRVVCVGCG")
-print(garden.assign_index())
+print(garden.students_plants())
