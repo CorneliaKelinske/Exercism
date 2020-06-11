@@ -9,8 +9,20 @@ class Garden:
      def __init__(self, diagram, students=STUDENTS):
          self.students = sorted(students)
          self.diagram = diagram.splitlines()
-         self.plants  = set_up_garden()
 
-     def set_up_garden(self):
+     def plants(self, name):
         index = self.students.index(name)
-        return 
+        print(index)
+
+        keys = []
+
+        print(list(enumerate(self.diagram)))
+        for item[1] in enumerate(self.diagram):
+            #print(item)
+            keys.append(item[1][index])
+            keys.append(item[1][index + 1])
+            print(keys)
+        return keys
+
+garden = Garden("VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV")
+print(garden.plants("Bob"))
