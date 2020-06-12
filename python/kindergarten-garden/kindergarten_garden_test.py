@@ -1,6 +1,6 @@
 import unittest
 
-from test import Garden
+from kindergarten_garden import Garden
 
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.1.1
 
