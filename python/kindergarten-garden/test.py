@@ -11,21 +11,13 @@ class Garden:
          self.diagram = diagram.splitlines()
 
      def plants(self, name):
-        index = self.students.index(name)
-        #print(index)
-
-        keys = []
-
-        # print(self.diagram)
-        for item in self.diagram:
-            # print(item)
-            # print(item[index*2])
-            # print(item[index*2+1])
-            keys.append(item[index*2])
-            keys.append(item[index*2 + 1])
+        index = self.students.index(name)        
+        plants_short = []       
+        for item in self.diagram:            
+            plants_short.append(item[index*2])
+            plants_short.append(item[index*2 + 1])
             
-            # print(keys)
-        return [PLANT_NAMES[x] for x in keys]
+        return [PLANT_NAMES[x] for x in plants_short]
 
 garden = Garden("VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV")
 print(garden.plants("Bob"))
