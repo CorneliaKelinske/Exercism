@@ -12,17 +12,20 @@ class Garden:
 
      def plants(self, name):
         index = self.students.index(name)
-        print(index)
+        #print(index)
 
         keys = []
 
-        print(list(enumerate(self.diagram)))
-        for item[1] in enumerate(self.diagram):
-            #print(item)
-            keys.append(item[1][index])
-            keys.append(item[1][index + 1])
-            print(keys)
-        return keys
+        # print(self.diagram)
+        for item in self.diagram:
+            # print(item)
+            # print(item[index*2])
+            # print(item[index*2+1])
+            keys.append(item[index*2])
+            keys.append(item[index*2 + 1])
+            
+            # print(keys)
+        return [PLANT_NAMES[x] for x in keys]
 
 garden = Garden("VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV")
 print(garden.plants("Bob"))
