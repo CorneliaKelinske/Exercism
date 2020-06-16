@@ -8,21 +8,19 @@ STUDENTS = [
 class Garden:
      def __init__(self, diagram, students=STUDENTS):
          self.students = sorted(students)
-         self.diagram = diagram.splitlines()
-         self.garden = self.__set_up_garden__()
+         self.garden = {}
+         for student in self.students:
+             self.garden[student] = []            
+         for line in diagram.splitlines():            
+            for plant_index, plant in enumerate(line):                 
+                self.garden[self.students[plant_index // 2]].append(plant)         
+
+     def plants (self, student):
+        return [PLANT_NAMES[plant] for plant in self.garden[student]]
+
     
 
-     def __set_up_garden__(self):
-        plant_lookup = {}
-        for student in self.students:
-            index = self.students.index(student)        
-            plants_short = []       
-            for item in self.diagram:            
-                plants_short.append(item[index*2])
-                plants_short.append(item[index*2 + 1])
-            plant_lookup.update({student: plants_short})
-        return plant_lookup
+    
 
-garden = Garden("VRCGVVRVCGGCCGVRGCVCGC\nVRCCCGCRRGVCGCRVVCVGCG")
-print(garden.__set_up_garden__())
+
         
