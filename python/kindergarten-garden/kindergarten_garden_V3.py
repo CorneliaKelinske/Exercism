@@ -17,3 +17,10 @@ class Garden:
 
      def plants (self, student):
         return [PLANT_NAMES[plant] for plant in self.garden[student]]
+
+    
+
+    
+
+
+        
