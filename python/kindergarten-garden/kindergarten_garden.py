@@ -13,7 +13,9 @@ class Garden:
              self.garden[student] = []            
          for line in diagram.splitlines():            
             for plant_index, plant in enumerate(line):                 
-                self.garden[self.students[plant_index // 2]].append(plant)         
+                self.garden[self.students[plant_index // 2]].append(PLANT_NAMES[plant])
+            
 
      def plants (self, student):
-        return [PLANT_NAMES[plant] for plant in self.garden[student]]
+        return self.garden[student]
+
