@@ -9,11 +9,13 @@ class Garden:
      def __init__(self, diagram, students=STUDENTS):
          self.students = sorted(students)
          self.garden = {}
-         for student in self.students:
-             self.garden[student] = []            
+        #  for student in self.students:
+        #      self.garden[student] = []
+        #  print(self.garden)
+                  
          for line in diagram.splitlines():            
             for plant_index, plant in enumerate(line):                 
-                self.garden[self.students[plant_index // 2]].append(PLANT_NAMES[plant])
+                self.garden.update({self.students[plant_index // 2]: PLANT_NAMES[plant]})
             
 
      def plants (self, student):
@@ -22,6 +24,3 @@ class Garden:
 garden = Garden("VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV")
 print(garden.plants("Alice"))
             
-
-        
-
