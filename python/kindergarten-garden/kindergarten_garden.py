@@ -18,9 +18,7 @@ class Garden:
 
      def plants (self, student):
         return self.garden[student]
-    
-garden = Garden("VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV")
-print(garden.plants("Alice"))
+
             
 
         

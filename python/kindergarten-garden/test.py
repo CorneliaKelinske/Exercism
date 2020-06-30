@@ -1,26 +1,46 @@
-PLANT_NAMES = {"R": "Radishes", "C": "Clover", "G": "Grass", "V": "Violets", "0":"Did not plant anything"}
-STUDENTS = [
-            "Alice", "Bob", "Charlie", "David",
-            "Eve", "Fred", "Ginny", "Harriet",
-            "Ileana", "Joseph", "Kincaid", "Larry"
-    ]
+PLANT_NAMES = {
+    'R': 'Radishes',
+    'C': 'Clover',
+    'G': 'Grass',
+    'V': 'Violets'
+}
+STUDENT_NAMES = {
+    'Alice',
+    'Bob',
+    'Charlie',
+    'David',
+    'Eve',
+    'Fred',
+    'Ginny',
+    'Harriet',
+    'Ileana',
+    'Joseph',
+    'Kincaid',
+    'Larry'
+}
+
 
 class Garden:
-     def __init__(self, diagram, students=STUDENTS):
-         self.students = sorted(students)
-         self.garden = {}
-        #  for student in self.students:
-        #      self.garden[student] = []
-        #  print(self.garden)
-                  
-         for line in diagram.splitlines():            
-            for plant_index, plant in enumerate(line):                 
-                self.garden.update({self.students[plant_index // 2]: PLANT_NAMES[plant]})
+    def __init__(self, diagram, students=None):
+        self.students_plants = {}
+
+        if not students:
+            students = STUDENT_NAMES
+
+        start, end = 0, 2
+        cups = diagram.splitlines()
+        for name in sorted(students):
+            self.students_plants[name] = [
+                PLANT_NAMES[i] for i in cups[0][slice(start, end)]
+            ]
+            self.students_plants[name] += [
+                PLANT_NAMES[i] for i in cups[1][slice(start, end)]
+            ]
+            start = start + 2
+            end = end + 2
+
+    def plants(self, student):
+        return self.students_plants[student]
             
 
-     def plants (self, student):
-        return self.garden[student]
-    
-garden = Garden("VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV")
-print(garden.plants("Alice"))
-            
+   
