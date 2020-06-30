@@ -1,0 +1,12 @@
+Grades and students are key : value pairs --> dictionary
+Set up said dictionary in init.
+
+for add student:
+use my dictionary and append my student to the list that is the value to the respective grade (key)
+(use sorted to make list alphabetically)
+
+
+roster : maybe some kind of loop, where I append the sorted students of the respectively min.key in the dict to a list.
+then delet said key value pairs
+
+grade: gives a sorted list of the students in said grade.
