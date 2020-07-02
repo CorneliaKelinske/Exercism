@@ -14,8 +14,11 @@ class School:
         pass
 
     def grade(self, grade_number):
-        pass
+        return sorted(self.all_students[grade_number])
+         
+        
 
 school = School()
-print(school.add_student(name="Aimee", grade=2))
+print(school.add_student(name="Hubert", grade=2))
 print(school.add_student(name="Bert", grade=2))
+print(school.grade(2))
