@@ -13,11 +13,21 @@ class School:
         return students_new
 
     def roster(self):
-        roster = sorted(self.all_students)
-        return roster
+        roster_complete = []
+        roster = [sorted(self.all_students[number]) for number in sorted(self.all_students)]
+        for item in roster:
+            for name in item:
+                roster_complete.append(name)
 
-    #def grade(self, grade_number):
-        #return self.all_students
+        return roster_complete
+
+    def grade(self, grade_number):
+        if grade_number in self.all_students:
+            return sorted(self.all_students[grade_number])
+        else:
+            return []
+
+    
          
         
 
