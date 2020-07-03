@@ -9,8 +9,8 @@ class School:
             self.all_students[grade].append(name)
         else:
             self.all_students.update({grade:[name]})
-        students_new = self.all_students
-        return students_new
+        all_students_copy = self.all_students
+        return all_students_copy
 
     def roster(self):
         roster_complete = []
@@ -23,16 +23,10 @@ class School:
 
     def grade(self, grade_number):
         if grade_number in self.all_students:
-            return sorted(self.all_students[grade_number])
-        else:
-            return []
+            return sorted(self.all_students[grade_number])       
+        return []
 
     
          
         
 
-school = School()
-print(school.add_student(name="Hubert", grade=2))
-print(school.add_student(name="Bert", grade=2))
-print(school.add_student(name="Elsa", grade =1))
-print(school.roster())
