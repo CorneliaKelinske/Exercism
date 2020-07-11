@@ -1,0 +1,13 @@
+Check 1:
+
+Question that is not all upper:
+check if string [-1] is "?" 
+
+Maybe nested: if "?" and allupper:
+
+Check 2:
+allupper
+
+Use list and isalphanum for checking if it is nothing
+
+else the rest
