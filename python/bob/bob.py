@@ -12,5 +12,5 @@ def response(hey_bob):
         return "Whatever."
     return "Fine. Be that way!"
 
-print(response("          "))
+
 
