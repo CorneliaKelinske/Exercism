@@ -1,15 +1,17 @@
-from collections import defaultdict
-
-
 class School:
     def __init__(self):
-        self.all_students = defaultdict(list)
-    
+        self.all_students = {}
+        
+
     def add_student(self, name, grade):
-        self.all_students[grade].append(name)
+    
+        if grade in self.all_students:
+            self.all_students[grade].append(name)
+        else:
+            self.all_students.update({grade:[name]})
         all_students_copy = self.all_students
         return all_students_copy
-    
+
     def roster(self):
         roster_complete = []
         roster = [sorted(self.all_students[number]) for number in sorted(self.all_students)]
@@ -23,3 +25,8 @@ class School:
         if grade_number in self.all_students:
             return sorted(self.all_students[grade_number])       
         return []
+
+    
+         
+        
+
