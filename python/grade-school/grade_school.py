@@ -3,12 +3,11 @@ from collections import defaultdict
 
 class School:
     def __init__(self):
-        self.all_students = defaultdict(list)
-    
+        self.all_students = defaultdict(list)    
     def add_student(self, name, grade):
         self.all_students[grade].append(name)
-        all_students_copy = self.all_students
-        return all_students_copy
+       
+        return self.all_students
     
     def roster(self):
         roster_complete = []
@@ -16,10 +15,8 @@ class School:
         for item in roster:
             for name in item:
                 roster_complete.append(name)
-
         return roster_complete
 
-    def grade(self, grade_number):
-        if grade_number in self.all_students:
-            return sorted(self.all_students[grade_number])       
-        return []
+    def grade(self, grade_number):        
+        return sorted(self.all_students.get(grade_number))
+    
