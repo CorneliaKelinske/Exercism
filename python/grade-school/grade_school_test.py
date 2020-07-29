@@ -1,6 +1,6 @@
 import unittest
 
-from grade_school import School
+from grade_school_v1 import School
 
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.1
 

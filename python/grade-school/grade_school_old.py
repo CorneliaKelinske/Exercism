@@ -18,7 +18,6 @@ class School:
         for item in roster:
             for name in item:
                 roster_complete.append(name)
-
         return roster_complete
 
     def grade(self, grade_number):
