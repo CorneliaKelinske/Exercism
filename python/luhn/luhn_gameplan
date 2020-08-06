@@ -1,0 +1,7 @@
+1. list comprehension, only items that are numbers
+2. wenn len(list) <- 1: not valid
+3. reverse the list
+4. list comprehension numx2 for num if index num >0 und nicht even
+5. again list comprehension if num - 9 if num >9 und index num >0 und nicht even
+6. add all numbers up
+7. check if can be divided by 10
