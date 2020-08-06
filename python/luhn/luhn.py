@@ -8,11 +8,14 @@ class Luhn:
             return False
         else:
             self.num.reverse()
-            #doubled = [int(item)*2 for item in self.num if self.num.index(item) %2 !=0]
+           
             doubled = [int(item)*2 if not index %2 ==0 else item for index, item in enumerate(self.num)]
-            return doubled
+            subtracted = [int(item)-9 if not index %2 ==0 and item>9 else int(item) for index, item in enumerate(doubled)]
+            if sum(subtracted) %10 == 0:
+                return True
+            return False
             
 
 
-card = Luhn("0545")
+card = Luhn("8273 1232 7352 0569")
 print(card.valid())
