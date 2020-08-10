@@ -7,8 +7,8 @@ class Luhn:
     def valid(self):
         if len(self.num) <=1:
             return False
-        elif:
-            
+        elif all(item.isnumeric() for item in self.num) is not True:            
+            return False
         else:
             self.num.reverse()
            
