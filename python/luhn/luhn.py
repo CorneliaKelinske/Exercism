@@ -1,11 +1,14 @@
 class Luhn:
     def __init__(self, card_num):
-        self.num = [item for item in card_num if item.isnumeric()]
+        self.num = [item for item in card_num if item != " "]
+        print(self.num)
         
 
     def valid(self):
         if len(self.num) <=1:
             return False
+        elif:
+            
         else:
             self.num.reverse()
            
@@ -17,5 +20,5 @@ class Luhn:
             
 
 
-card = Luhn("8273 1232 7352 0569")
+card = Luhn("059a")
 print(card.valid())
