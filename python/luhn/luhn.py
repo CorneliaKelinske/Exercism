@@ -1,24 +1,15 @@
 class Luhn:
     def __init__(self, card_num):
         self.num = [item for item in card_num if item != " "]
-        print(self.num)
-        
-
+           
     def valid(self):
-        if len(self.num) <=1:
-            return False
-        elif all(item.isnumeric() for item in self.num) is not True:            
-            return False
+        if len(self.num) <=1 or not all(item.isnumeric() for item in self.num):
+            return False        
         else:
             self.num.reverse()
-           
-            doubled = [int(item)*2 if not index %2 ==0 else item for index, item in enumerate(self.num)]
-            subtracted = [int(item)-9 if not index %2 ==0 and item>9 else int(item) for index, item in enumerate(doubled)]
-            if sum(subtracted) %10 == 0:
-                return True
-            return False
-            
+            all_ints = [int(item) for item in self.num]    
+            doubled = [item*2 if not index %2 ==0 else item for index, item in enumerate(all_ints)]
+            subtracted = [item-9 if not index %2 ==0 and item>9 else int(item) for index, item in enumerate(doubled)]
+            return sum(subtracted) %10 == 0
+             
 
-
-card = Luhn("059a")
-print(card.valid())
