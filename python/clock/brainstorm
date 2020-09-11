@@ -1,0 +1,14 @@
+?????
+- need to look at the minutes first
+- 1st question: is second number < 60: wenn ja, second number bleibt second number
+if not:
+- add int(second number/60) to first number
+- second number = second number % 60
+
+question: hopefully first number is adjusted and remains adjusted
+
+- look at first number:
+if number is < 23: number remains number
+
+and then I guess I might need some while loop?!!! aaaaahhh
+
