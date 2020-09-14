@@ -11,4 +11,16 @@ question: hopefully first number is adjusted and remains adjusted
 if number is < 23: number remains number
 
 and then I guess I might need some while loop?!!! aaaaahhh
+need to circulate in a way.
 
+number und count
+number = number
+count = 0
+while number > 0:
+    while count <= 23:
+        count += 1
+        number -= 1
+    
+
+maybe then check if number < 23 if yes hour = num-1 
+otherwise start while loop again 
