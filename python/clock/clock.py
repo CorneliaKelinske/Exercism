@@ -1,6 +1,8 @@
 class Clock:
     def __init__(self, hour, minute):
-        pass
+        if minute < 60:
+            self.minute = minute
+        self.minute 
 
     def __repr__(self):
         pass
