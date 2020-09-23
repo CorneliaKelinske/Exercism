@@ -1,14 +1,14 @@
 class Clock:
     def __init__(self, hour, minute):
         if minute < 60:
-            self.minute = minute
+            self.minute = str(minute).zfill(2)
         else:
             self.minute = minute%60
-            hour = int(minute/60) + hour
+            hour = str(int(minute/60) + hour).zfill(2)
         if hour < 23:
-            self.hour = hour
+            self.hour = str(hour).zfill(2)
         else:
-            self.hour = hour%24
+            self.hour = str(hour%24).zfill(2)
 
 
     def __repr__(self):
@@ -24,5 +24,5 @@ class Clock:
     def __sub__(self, minutes):
         pass
 
-test_clock = Clock(100,0)
+test_clock = Clock(1, 60)
 print(test_clock)
