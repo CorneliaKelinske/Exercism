@@ -12,5 +12,13 @@ if number is < 23: number remains number
 
 maybe need to divide by 24 and then use the modulus... YES
 
+for negative numbers:
+need to work with abs(number)
+
+need to subtract minutes from 60
+and hours from 24 
+
+guess modulus stuff will be similar to positive
+
 
 
