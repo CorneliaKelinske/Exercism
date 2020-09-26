@@ -4,15 +4,15 @@ class Clock:
             self.minute = str(minute).zfill(2)
         else:
             self.minute = minute%60
-            hour = str(int(minute/60) + hour).zfill(2)
+            hour = int(minute/60) + hour
         if hour < 23:
-            self.hour = str(hour).zfill(2)
+            self.hour = hour
         else:
-            self.hour = str(hour%24).zfill(2)
+            self.hour = hour%24
 
 
     def __repr__(self):
-        return(f"{self.hour}:{self.minute}")
+        return(f"{str(self.hour).zfill(2)}:{str(self.minute).zfill(2)}")
 
 
     def __eq__(self, other):
