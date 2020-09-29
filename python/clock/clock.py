@@ -13,10 +13,16 @@ class Clock:
                 self.minute = 60 - abs(minute)%60
                 hour = hour - int(abs(minute)/60)
 
-        if hour < 23:
-            self.hour = hour
+        if hour >= 0:
+            if hour < 23:
+                self.hour = hour
+            else:
+                self.hour = hour%24
         else:
-            self.hour = hour%24
+            if abs(hour) <= 24:
+                self.hour = 24 - abs(hour)
+            else:
+                self.hour = 24 - int(abs(hour)/24)
         
 
 
