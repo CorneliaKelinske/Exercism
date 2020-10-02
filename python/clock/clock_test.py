@@ -40,17 +40,17 @@ class ClockTest(unittest.TestCase):
     def test_hour_and_minutes_roll_over_to_exactly_midnight(self):
         self.assertEqual(str(Clock(72, 8640)), "00:00")
 
-    # def test_negative_hour(self):
-    #     self.assertEqual(str(Clock(-1, 15)), "23:15")
+    def test_negative_hour(self):
+        self.assertEqual(str(Clock(-1, 15)), "23:15")
 
-    # def test_negative_hour_rolls_over(self):
-    #     self.assertEqual(str(Clock(-25, 0)), "23:00")
+    def test_negative_hour_rolls_over(self):
+        self.assertEqual(str(Clock(-25, 0)), "23:00")
 
-    # def test_negative_hour_rolls_over_continuously(self):
-    #     self.assertEqual(str(Clock(-91, 0)), "05:00")
+    def test_negative_hour_rolls_over_continuously(self):
+        self.assertEqual(str(Clock(-91, 0)), "05:00")
 
-    # def test_negative_minutes(self):
-    #     self.assertEqual(str(Clock(1, -40)), "00:20")
+    def test_negative_minutes(self):
+        self.assertEqual(str(Clock(1, -40)), "00:20")
 
     # def test_negative_minutes_roll_over(self):
     #     self.assertEqual(str(Clock(1, -160)), "22:20")

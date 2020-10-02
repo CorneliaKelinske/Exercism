@@ -22,7 +22,7 @@ class Clock:
             if abs(hour) <= 24:
                 self.hour = 24 - abs(hour)
             else:
-                self.hour = 24 - int(abs(hour)/24)
+                self.hour = 24 - abs(hour)%24
         
 
 
