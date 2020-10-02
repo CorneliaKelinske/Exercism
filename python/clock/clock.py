@@ -8,8 +8,10 @@ class Clock:
                 hour = int(minute/60) + hour
         else:
             hour -= hour
-            if abs(minute)<= 60:
+            if abs(minute)< 60:
                 self.minute = 60 - abs(minute)
+            elif abs(minute) == 60:                
+                self.minute = 0
             else:
                 self.minute = 60 - abs(minute)%60
                 hour = hour - int(abs(minute)/60)
@@ -41,5 +43,5 @@ class Clock:
     def __sub__(self, minutes):
         pass
 
-test_clock = Clock(1, 60)
+test_clock = Clock(2, -60)
 print(test_clock)
