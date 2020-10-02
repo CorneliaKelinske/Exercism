@@ -7,6 +7,7 @@ class Clock:
                 self.minute = minute%60
                 hour = int(minute/60) + hour
         else:
+            hour -= hour
             if abs(minute)<= 60:
                 self.minute = 60 - abs(minute)
             else:
