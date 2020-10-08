@@ -11,15 +11,16 @@ class Clock:
                 hour = int(minute/60) + hour
         else:
             print("going through the minute is negative loop")
-            hour -= hour
+            hour -= 1
             print("I have deducted one hour")
-            print
+            print(hour)
             if abs(minute)< 60:
                 print("going through the absolute value is smaller than 60 loop")
                 self.minute = 60 - abs(minute)
             elif abs(minute) == 60:
-                print("going through the absolute vlaue is 60 loop")                
+                print("going through the absolute value is 60 loop")                
                 self.minute = 0
+                print(hour)
             else:
                 print("going through the absolute value is greater than 60 loop")
                 self.minute = 60 - abs(minute)%60
