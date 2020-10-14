@@ -61,15 +61,15 @@ class ClockTest(unittest.TestCase):
     def test_negative_sixty_minutes_is_previous_hour(self):
         self.assertEqual(str(Clock(2, -60)), "01:00")
 
-    # def test_negative_hour_and_minutes_both_roll_over(self):
-    #     self.assertEqual(str(Clock(-25, -160)), "20:20")
+    def test_negative_hour_and_minutes_both_roll_over(self):
+        self.assertEqual(str(Clock(-25, -160)), "20:20")
 
-    # def test_negative_hour_and_minutes_both_roll_over_continuously(self):
-    #     self.assertEqual(str(Clock(-121, -5810)), "22:10")
+    def test_negative_hour_and_minutes_both_roll_over_continuously(self):
+        self.assertEqual(str(Clock(-121, -5810)), "22:10")
 
     # # Add Minutes
-    # def test_add_minutes(self):
-    #     self.assertEqual(str(Clock(10, 0) + 3), "10:03")
+    def test_add_minutes(self):
+        self.assertEqual(str(Clock(10, 0) + 3), "10:03")
 
     # def test_add_no_minutes(self):
     #     self.assertEqual(str(Clock(6, 41) + 0), "06:41")

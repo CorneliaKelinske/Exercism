@@ -55,7 +55,9 @@ class Clock:
         pass
 
     def __add__(self, minutes):
-        pass
+        self.minute += minutes
+        return(f"{str(self.hour).zfill(2)}:{str(self.minute).zfill(2)}")
+
 
     def __sub__(self, minutes):
         pass
