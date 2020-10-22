@@ -33,7 +33,7 @@ class Clock:
                 #print("going through the hour is smaller than 23 loop")
                 self.hour = hour
             else:
-                print("going through the hour is greater than 23 loop")
+                #print("going through the hour is greater than 23 loop")
                 self.hour = hour%24
         else:
             #print("going through the hour is negative loop")

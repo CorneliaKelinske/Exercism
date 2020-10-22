@@ -1,0 +1,8 @@
+maybe better idea:
+convert everything into minutes and add up
+
+call that variable self.total_minutes
+
+divide total minutes by 60 to get total hours
+modulus is self.minutes
+
