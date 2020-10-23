@@ -62,5 +62,5 @@ class Clock:
     def __sub__(self, minutes):
         pass
 
-test_clock = Clock(2, -60)
+test_clock = Clock(-1, 15)
 print(test_clock)

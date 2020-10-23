@@ -3,12 +3,13 @@ class Clock:
         self.total_minutes = hour * 60 + minute
         self.minute = self.total_minutes%60
         total_hours = int(self.total_minutes/60)
+        print(total_hours)
 
         if total_hours >= 0:
             #print("going through the hour is greater than or 0 loop")
             if total_hours <= 23:
                 #print("going through the hour is smaller than 23 loop")
-                self.hour = hour
+                self.hour = total_hours
             else:
                 #print("going through the hour is greater than 23 loop")
                 self.hour = total_hours%24
@@ -27,5 +28,5 @@ class Clock:
     def __repr__(self):
         return(f"{str(self.hour).zfill(2)}:{str(self.minute).zfill(2)}")
 
-test_clock = Clock(25, 0)
+test_clock = Clock(-1, 15)
 print(test_clock)
