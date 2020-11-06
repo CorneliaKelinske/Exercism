@@ -1,8 +1,13 @@
 class Clock:
     def __init__(self, hour, minute):
         self.total_minutes = hour * 60 + minute
+        #print(self.total_minutes)
         self.minute = self.total_minutes%60
-        total_hours = int(self.total_minutes/60)
+        #print(self.minute)
+        if self.total_minutes >= 0:
+            total_hours = int(self.total_minutes/60)
+        else:
+            total_hours = int(self.total_minutes/60) - 1
         print(total_hours)
 
         if total_hours >= 0:
