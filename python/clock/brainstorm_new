@@ -6,3 +6,12 @@ call that variable self.total_minutes
 divide total minutes by 60 to get total hours
 modulus is self.minutes
 
+06 November:
+Next challenge negative minutes roll over
+Clock (1, -160) is 22:20
+
+09 November
+I do get the right amount of hours to subtract from 24.
+Need to find out why I am not getting down to 22, but only to 23.
+
+so start after first if loop
