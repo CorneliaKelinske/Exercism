@@ -11,7 +11,5 @@ Next challenge negative minutes roll over
 Clock (1, -160) is 22:20
 
 09 November
-I do get the right amount of hours to subtract from 24.
-Need to find out why I am not getting down to 22, but only to 23.
-
-so start after first if loop
+if my hours are negative and modulus is 0, then I do not need to deduct another hour
+I am deducting one hour too much when hour is negative

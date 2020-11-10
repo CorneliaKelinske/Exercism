@@ -20,12 +20,12 @@ class Clock:
                 self.hour = total_hours%24
         else:
             #print("going through the hour is negative loop")
-            if abs(hour) <= 24:
+            if abs(total_hours) <= 24:
                 #print("going through the absolute value of the hour is smaller or equal to 24 loop")
                 self.hour = 24 - abs(total_hours)
             else:
                 #print("going through the absolute value of the hour is greater than 24 loop")
-                self.hour = 24 - abs(hour)%24
+                self.hour = 24 - abs(total_hours)%24
         
 
 
@@ -33,5 +33,5 @@ class Clock:
     def __repr__(self):
         return(f"{str(self.hour).zfill(2)}:{str(self.minute).zfill(2)}")
 
-test_clock = Clock(1, -160)
+test_clock = Clock(-91, 0)
 print(test_clock)
