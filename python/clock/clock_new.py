@@ -22,7 +22,7 @@ class Clock:
             #print("going through the hour is negative loop")
             if abs(hour) <= 24:
                 #print("going through the absolute value of the hour is smaller or equal to 24 loop")
-                self.hour = 24 - abs(hour)
+                self.hour = 24 - abs(total_hours)
             else:
                 #print("going through the absolute value of the hour is greater than 24 loop")
                 self.hour = 24 - abs(hour)%24
