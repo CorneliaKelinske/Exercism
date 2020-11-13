@@ -7,7 +7,10 @@ class Clock:
         if self.total_minutes >= 0:
             total_hours = int(self.total_minutes/60)
         else:
-            total_hours = int(self.total_minutes/60) - 1
+            if self.total_minutes%60 == 0:                
+                total_hours=int(self.total_minutes/60)
+            else:
+                total_hours = int(self.total_minutes/60)-1
         print(total_hours)
 
         if total_hours >= 0:
@@ -33,5 +36,5 @@ class Clock:
     def __repr__(self):
         return(f"{str(self.hour).zfill(2)}:{str(self.minute).zfill(2)}")
 
-test_clock = Clock(-91, 0)
+test_clock = Clock(-25, 0)
 print(test_clock)
