@@ -36,5 +36,9 @@ class Clock:
     def __repr__(self):
         return(f"{str(self.hour).zfill(2)}:{str(self.minute).zfill(2)}")
 
+    def __add__(self, minutes):
+        self.minute += minutes
+        return(f"{str(self.hour).zfill(2)}:{str(self.minute).zfill(2)}")
+
 test_clock = Clock(-25, 0)
 print(test_clock)

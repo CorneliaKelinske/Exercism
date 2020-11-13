@@ -13,3 +13,7 @@ Clock (1, -160) is 22:20
 09 November
 if my hours are negative and modulus is 0, then I do not need to deduct another hour
 I am deducting one hour too much when hour is negative
+
+
+13 November
+need to work on adding seconds and rolling over to next hour
