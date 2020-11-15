@@ -1,7 +1,7 @@
 class Clock:
     def __init__(self, hour, minute):
         self.total_minutes = hour * 60 + minute
-        print(self.total_minutes)
+        #print(self.total_minutes)
         self.minute = self.total_minutes%60
         #print(self.minute)
         if self.total_minutes >= 0:
@@ -38,7 +38,8 @@ class Clock:
 
     def __add__(self, minutes):
         self.minute += minutes
+        
         return(f"{str(self.hour).zfill(2)}:{str(self.minute).zfill(2)}")
 
 test_clock = Clock(-25, 0)
-print(test_clock)
+print(test_clock.__add__(40))
