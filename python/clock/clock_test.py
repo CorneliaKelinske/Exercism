@@ -77,14 +77,14 @@ class ClockTest(unittest.TestCase):
     def test_add_to_next_hour(self):
         self.assertEqual(str(Clock(0, 45) + 40), "01:25")
 
-    # def test_add_more_than_one_hour(self):
-    #     self.assertEqual(str(Clock(10, 0) + 61), "11:01")
+    def test_add_more_than_one_hour(self):
+        self.assertEqual(str(Clock(10, 0) + 61), "11:01")
 
-    # def test_add_more_than_two_hours_with_carry(self):
-    #     self.assertEqual(str(Clock(0, 45) + 160), "03:25")
+    def test_add_more_than_two_hours_with_carry(self):
+        self.assertEqual(str(Clock(0, 45) + 160), "03:25")
 
-    # def test_add_across_midnight(self):
-    #     self.assertEqual(str(Clock(23, 59) + 2), "00:01")
+    def test_add_across_midnight(self):
+        self.assertEqual(str(Clock(23, 59) + 2), "00:01")
 
     # def test_add_more_than_one_day_1500_min_25_hrs(self):
     #     self.assertEqual(str(Clock(5, 32) + 1500), "06:32")
