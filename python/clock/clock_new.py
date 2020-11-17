@@ -37,9 +37,11 @@ class Clock:
         return(f"{str(self.hour).zfill(2)}:{str(self.minute).zfill(2)}")
 
     def __add__(self, minutes):
-        self.minute += minutes
+        new_total_minutes= self.minute +minutes
+        new_hour = self.hour+divmod(new_total_minutes,60)[0]
+        new_minutes = divmod(new_total_minutes,60)[1]
         
-        return(f"{str(self.hour).zfill(2)}:{str(self.minute).zfill(2)}")
+        return(f"{str(new_hour).zfill(2)}:{str(new_minutes).zfill(2)}")
 
-test_clock = Clock(-25, 0)
+test_clock = Clock(0, 45)
 print(test_clock.__add__(40))
