@@ -22,7 +22,7 @@ class Clock:
                 hour = total_hours
             else:
                 #print("going through the hour is greater than 23 loop")
-                self.hour = total_hours % 24
+                hour = total_hours % 24
         else:
             #print("going through the hour is negative loop")
             if abs(total_hours) <= 24:
@@ -36,6 +36,10 @@ class Clock:
 
     def __repr__(self):
         return self.__convert__(self.total_minutes)
+    
+    def __add__(self, minutes):
+        new_total_minutes=self.total_minutes+minutes
+        return self.__convert__(new_total_minutes)
 
-test_clock = Clock(0, 45)
+test_clock = Clock(24, 00)
 print(test_clock)

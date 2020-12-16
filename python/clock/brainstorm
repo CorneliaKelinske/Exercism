@@ -34,6 +34,9 @@ maybe reorganize so that all the conversion is done in a separate function
 
 16 December
 trying to find out why my plan does not work
+it works now
+next step: implement the "add minutes"
+implemented; started running tests -- so far so good
 
 
 
