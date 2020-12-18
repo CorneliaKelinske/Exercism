@@ -20,6 +20,7 @@ class Clock:
             if total_hours <= 23:
                 #print("going through the hour is smaller than 23 loop")
                 hour = total_hours
+            
             else:
                 #print("going through the hour is greater than 23 loop")
                 hour = total_hours % 24
@@ -31,6 +32,8 @@ class Clock:
             else:
                 #print("going through the absolute value of the hour is greater than 24 loop")
                 hour = 24 - abs(total_hours) % 24
+        if hour == 24:
+            hour = 0
 
         return(f"{str(hour).zfill(2)}:{str(minute).zfill(2)}")
 
@@ -45,5 +48,5 @@ class Clock:
         new_total_minutes=self.total_minutes-minutes
         return self.__convert__(new_total_minutes)
 
-test_clock = Clock(24, 00)
-print(test_clock)
+test_clock = Clock(2, 20)
+print(test_clock.__sub__(3000))
