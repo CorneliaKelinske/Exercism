@@ -40,6 +40,10 @@ class Clock:
     def __add__(self, minutes):
         new_total_minutes=self.total_minutes+minutes
         return self.__convert__(new_total_minutes)
+    
+    def __sub__(self, minutes):
+        new_total_minutes=self.total_minutes-minutes
+        return self.__convert__(new_total_minutes)
 
 test_clock = Clock(24, 00)
 print(test_clock)
