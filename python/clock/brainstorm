@@ -38,5 +38,9 @@ it works now
 next step: implement the "add minutes"
 implemented; started running tests -- so far so good
 
+20 December:
+Subtracting all works fine.
+Starting on the equal to thing.
+Problem: I have no idea how to get to that second argument, which is again an instance of "Clock"
 
 

@@ -1,5 +1,7 @@
 class Clock:
     def __init__(self, hour, minute):
+        self.hour = hour
+        self.minute = minute
         self.total_minutes = hour * 60 + minute
 
 
@@ -39,6 +41,12 @@ class Clock:
 
     def __repr__(self):
         return self.__convert__(self.total_minutes)
+    
+    def __eq__(self, other):
+        other_total_minutes = other.hour*60 + other.minute
+        if self.__convert__(other_total_minutes) == self.__convert__(self.total_minutes):
+            return True
+        return False
     
     def __add__(self, minutes):
         new_total_minutes=self.total_minutes+minutes
