@@ -1,66 +1,47 @@
 class Clock:
     def __init__(self, hour, minute):
-        if minute >= 0:
-            #print("going through the minute is greater than or zero loop")
-            if minute < 60:
-                #print("going through the minute smaller than 60 loop")
-                self.minute = minute
-            else:
-                #print("going through the minute is greater or equal to 60 loop")
-                self.minute = minute%60
-                hour = int(minute/60) + hour
-        else:
-            #print("going through the minute is negative loop")
-            hour -= 1
-            #print("I have deducted one hour")
-            #print(hour)
-            if abs(minute)< 60:
-                #print("going through the absolute value is smaller than 60 loop")
-                self.minute = 60 - abs(minute)
-            elif abs(minute) == 60:
-                #print("going through the absolute value is 60 loop")                
-                self.minute = 0
-                #print(hour)
-            else:
-                #print("going through the absolute value is greater than 60 loop")
-                self.minute = 60 - abs(minute)%60
-                hour = hour - int(abs(minute)/60)
+        self.hour = hour
+        self.minute = minute
+        self.total_minutes = hour * 60 + minute
 
-        #print(hour)
-        if hour >= 0:
-            #print("going through the hour is greater than or 0 loop")
-            if hour <= 23:
-                #print("going through the hour is smaller than 23 loop")
-                self.hour = hour
-            else:
-                #print("going through the hour is greater than 23 loop")
-                self.hour = hour%24
+
+    def __convert__(self, minutes):
+        minute = minutes % 60 
+
+        if minutes >= 0 or minutes % 60 == 0:
+            total_hours = int(minutes/60)       
         else:
-            #print("going through the hour is negative loop")
-            if abs(hour) <= 24:
-                #print("going through the absolute value of the hour is smaller or equal to 24 loop")
-                self.hour = 24 - abs(hour)
-            else:
-                #print("going through the absolute value of the hour is greater than 24 loop")
-                self.hour = 24 - abs(hour)%24
+            total_hours = int(minutes/60)-1
         
+        if total_hours >= 0:            
+            if total_hours <= 23:                
+                hour = total_hours            
+            else:               
+                hour = total_hours % 24
+        else:            
+            if abs(total_hours) <= 24:                
+                hour = 24 - abs(total_hours)
+            else:                
+                hour = 24 - abs(total_hours) % 24
+        if hour == 24:
+            hour = 0
 
-
+        return(f"{str(hour).zfill(2)}:{str(minute).zfill(2)}")
 
     def __repr__(self):
-        return(f"{str(self.hour).zfill(2)}:{str(self.minute).zfill(2)}")
-
-
+        return self.__convert__(self.total_minutes)
+    
     def __eq__(self, other):
-        pass
-
+        other_total_minutes = other.hour*60 + other.minute
+        if self.__convert__(other_total_minutes) == self.__convert__(self.total_minutes):
+            return True
+        return False
+    
     def __add__(self, minutes):
-        self.minute += minutes
-        return(f"{str(self.hour).zfill(2)}:{str(self.minute).zfill(2)}")
-
-
+        new_total_minutes=self.total_minutes+minutes
+        return self.__convert__(new_total_minutes)
+    
     def __sub__(self, minutes):
-        pass
+        new_total_minutes=self.total_minutes-minutes
+        return self.__convert__(new_total_minutes)
 
-test_clock = Clock(-1, 15)
-print(test_clock)
