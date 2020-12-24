@@ -1,0 +1,4 @@
+1. Get all the products within the range:
+- maybe list comprehension
+- or better, a dictionary saving all the factors and products as key value pairs.
+
