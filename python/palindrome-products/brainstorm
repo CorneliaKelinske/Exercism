@@ -1,4 +1,9 @@
 1. Get all the products within the range:
-- maybe list comprehension
-- or better, a dictionary saving all the factors and products as key value pairs.
+add them to a dictionary
+not a dictionary comprehension, because it will have to be a bit more complicated:
+    product is the key, if key is already in dict, I need to append the factors.
+    -> dict values must be lists with tuples
+then, i can check which keys are palindromes (if their reversed string is identical to their string form), 
+keep them by way of dict comprehension?
+And then check for the smallest or largest palindrome
 
