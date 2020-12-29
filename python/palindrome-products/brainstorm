@@ -5,5 +5,6 @@ not a dictionary comprehension, because it will have to be a bit more complicate
     -> dict values must be lists with tuples
 then, i can check which keys are palindromes (if their reversed string is identical to their string form), 
 keep them by way of dict comprehension?
+then, eliminate duplicates in the factors... maybe by ordering them by value????
 And then check for the smallest or largest palindrome
 
