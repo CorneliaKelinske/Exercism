@@ -8,3 +8,8 @@ keep them by way of dict comprehension?
 then, eliminate duplicates in the factors... maybe by ordering them by value????
 And then check for the smallest or largest palindrome
 
+
+31 December:
+I am getting the palindromes.
+Now I need to get the greatest for now.
+Look it up in the dictionary and get all factors, however, I need to eliminate duplicates.

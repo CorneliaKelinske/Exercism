@@ -6,7 +6,8 @@ def largest(min_factor, max_factor):
                 products[num1*num2].append((num1, num2))
             else:
                 products.update({num1*num2 : [(num1, num2)]})
-    return products
+    palindromes = [key for key in products if str(key) == str(key)[-1]]
+    return palindromes
 
 print(largest(1,9))   
 
