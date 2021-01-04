@@ -22,3 +22,10 @@ next steps:
 run tests for largest 
 copy code and adapt for smallest
 make prettier
+
+4 January:
+had to fix slicing
+2 tests pass; 
+moving forward:
+make other tests pass as well
+then see 2 January
