@@ -23,7 +23,7 @@ def largest(min_factor, max_factor):
        
     return result
 
-print(largest(10,99))
+print(largest(1000,9999))
 
 
 def smallest(min_factor, max_factor):

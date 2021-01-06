@@ -29,3 +29,8 @@ had to fix slicing
 moving forward:
 make other tests pass as well
 then see 2 January
+
+6 January:
+memory error for 4-digit numbers
+idea: only store palindrome products and their factors in the products dictionary ==> less memory required
+
