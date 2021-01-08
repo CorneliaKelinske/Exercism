@@ -14,4 +14,3 @@
 # test_list = [1, 2, 3, 4, 4]
 # new_list = list(set(test_list))
 # print(new_list)
-
