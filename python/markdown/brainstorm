@@ -1,0 +1,14 @@
+read about markdown
+find out what this code does
+add print statements
+
+
+first ideas:
+- for headers:
+maybe just go of the lenght of the '####' string
+
+-italic and bold:
+- maybe also just count the stars
+
+next step:
+look in test which markdowns are actually required
