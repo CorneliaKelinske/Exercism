@@ -3,12 +3,16 @@ import re
 
 def parse(markdown):
     lines = markdown.split('\n')
+    print(lines)
     res = ''
     in_list = False
     in_list_append = False
     for i in lines:
         if re.match('###### (.*)', i) is not None:
-            i = '<h6>' + i[7:] + '</h6>'
+            print(i)           
+            i = f'{len(i[0])} ' + i[7:] + '</h6>'
+            print(i)
+            
         elif re.match('## (.*)', i) is not None:
             i = '<h2>' + i[3:] + '</h2>'
         elif re.match('# (.*)', i) is not None:
@@ -69,3 +73,5 @@ def parse(markdown):
     if in_list:
         res += '</ul>'
     return res
+
+print(parse("###### This will be an h6"))
